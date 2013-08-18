@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8EC33046-1C61-4167-960E-3BB29BCD8F36}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ExecutionEngine</RootNamespace>
+    <AssemblyName>ExecutionEngine</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Mono.Posix" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Engine.cs" />
+    <Compile Include="Utils.cs" />
+    <Compile Include="Compiling\ICompiler.cs" />
+    <Compile Include="Compiling\JavaCompile.cs" />
+    <Compile Include="Compiling\PythonCompile.cs" />
+    <Compile Include="Compiling\CCompile.cs" />
+    <Compile Include="Compiling\CPPCompile.cs" />
+    <Compile Include="Compiling\ICompilerFactory.cs" />
+    <Compile Include="Compiling\PhpCompile.cs" />
+    <Compile Include="Compiling\PascalCompile.cs" />
+    <Compile Include="Compiling\ObjectiveCCompile.cs" />
+    <Compile Include="Compiling\HaskellCompile.cs" />
+    <Compile Include="Compiling\RubyCompile.cs" />
+    <Compile Include="Compiling\PerlCompile.cs" />
+    <Compile Include="Compiling\LuaCompile.cs" />
+    <Compile Include="Compiling\NasmCompile.cs" />
+    <Compile Include="Diff.cs" />
+    <Compile Include="Compiling\JavascriptCompile.cs" />
+    <Compile Include="Compiling\LispCompile.cs" />
+    <Compile Include="Compiling\PrologCompile.cs" />
+    <Compile Include="Compiling\GoCompile.cs" />
+    <Compile Include="Compiling\ScalaCompile.cs" />
+    <Compile Include="Compiling\SchemeCompile.cs" />
+    <Compile Include="Compiling\NodeCompile.cs" />
+    <Compile Include="Compiling\Python3Compile.cs" />
+    <Compile Include="Compiling\OctaveCompile.cs" />
+    <Compile Include="Compiling\CClangCompile.cs" />
+    <Compile Include="Compiling\CPPClangCompile.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Compiling\" />
+  </ItemGroup>
+</Project>
