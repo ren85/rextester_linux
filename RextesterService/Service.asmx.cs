@@ -11,6 +11,7 @@ using System.Web;
 using System.Web.Script.Serialization;
 using Services;
 using System.Net;
+using System.Web.Script.Services;
 
 namespace RextesterService
 {

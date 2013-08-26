@@ -13,7 +13,7 @@ namespace ExecutionEngine
 		public CompilerData Compile (InputData idata, CompilerData cdata)
 		{			
 			string compiler = "nasm";
-			string args = "-f elf -o "+idata.BaseDir+"1.o " + idata.PathToSource;
+			string args = "-f elf64 -o "+idata.BaseDir+"1.o " + idata.PathToSource;
 			long compileTime;
 			var res = Engine.CallCompiler(compiler, args, out compileTime);
 			cdata.CompileTimeMs = compileTime;

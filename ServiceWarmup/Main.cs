@@ -56,7 +56,7 @@ namespace ServiceWarmup
 			{
 				Thread.Sleep(SleepIntervalInMilliseconds);
 				var run = RunFactory.Next();				
-				using(var service = new n226589_s_dedikuoti_lt.Service())
+				using(var service = new n178_238_226_7.Service())
 				{					 
 					try
 					{

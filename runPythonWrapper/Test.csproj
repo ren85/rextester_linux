@@ -41,13 +41,7 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="Web References\localhost\Reference.cs">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Compile>
-    <Compile Include="Web References\localhost_2\Reference.cs">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Compile>
-    <Compile Include="Web References\n226589_s_dedikuoti_lt\Reference.cs">
+    <Compile Include="Web References\n178_238_226_7\Reference.cs">
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -63,41 +57,26 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadata Include="Service References" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\n178_238_226_7" />
+    <WCFMetadataStorage Include="Service References\www.w3schools.com" />
+  </ItemGroup>
+  <ItemGroup>
     <WebReferences Include="Web References" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://localhost:8080/Service.asmx">
+    <WebReferenceUrl Include="http://178.238.226.7/Service.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\localhost</RelPath>
-      <UpdateFromURL>http://localhost:8080/Service.asmx</UpdateFromURL>
-    </WebReferenceUrl>
-    <WebReferenceUrl Include="http://localhost/service/Service.asmx">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\localhost_2</RelPath>
-      <UpdateFromURL>http://localhost/service/Service.asmx</UpdateFromURL>
-    </WebReferenceUrl>
-    <WebReferenceUrl Include="http://226589.s.dedikuoti.lt/service/Service.asmx">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\n226589_s_dedikuoti_lt</RelPath>
-      <UpdateFromURL>http://226589.s.dedikuoti.lt/service/Service.asmx</UpdateFromURL>
+      <RelPath>Web References\n178_238_226_7</RelPath>
+      <UpdateFromURL>http://178.238.226.7/Service.asmx</UpdateFromURL>
     </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Web References\localhost\Service.wsdl" />
-    <None Include="Web References\localhost\Service.disco" />
-    <None Include="Web References\localhost\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Web References\localhost_2\Service.disco" />
-    <None Include="Web References\localhost_2\Service.wsdl" />
-    <None Include="Web References\localhost_2\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Web References\n226589_s_dedikuoti_lt\Service.disco" />
-    <None Include="Web References\n226589_s_dedikuoti_lt\Service.wsdl" />
-    <None Include="Web References\n226589_s_dedikuoti_lt\Reference.map">
+    <None Include="Web References\n178_238_226_7\Service.disco" />
+    <None Include="Web References\n178_238_226_7\Service.wsdl" />
+    <None Include="Web References\n178_238_226_7\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

@@ -24,6 +24,9 @@
           <xs:enumeration value="Scheme" />
           <xs:enumeration value="Nodejs" />
           <xs:enumeration value="Python3" />
+          <xs:enumeration value="Octave" />
+          <xs:enumeration value="CClang" />
+          <xs:enumeration value="CppClang" />
         </xs:restriction>
       </xs:simpleType>
       <xs:element name="DoWork">
@@ -54,6 +57,12 @@
           <xs:element minOccurs="0" maxOccurs="1" name="Exit_Status" type="xs:string" />
           <xs:element minOccurs="1" maxOccurs="1" name="Exit_Code" nillable="true" type="xs:int" />
           <xs:element minOccurs="0" maxOccurs="1" name="System_Error" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Files" type="s0:ArrayOfBase64Binary" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfBase64Binary">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="base64Binary" nillable="true" type="xs:base64Binary" />
         </xs:sequence>
       </xs:complexType>
       <xs:element name="DoWorkResponse">
@@ -101,6 +110,30 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
+      <xs:element name="GetPythonDotCompletions">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="source" type="xs:string" />
+            <xs:element minOccurs="1" maxOccurs="1" name="line" type="xs:int" />
+            <xs:element minOccurs="1" maxOccurs="1" name="column" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetPythonDotCompletionsResponse">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="GetPythonParenCompletions">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="source" type="xs:string" />
+            <xs:element minOccurs="1" maxOccurs="1" name="line" type="xs:int" />
+            <xs:element minOccurs="1" maxOccurs="1" name="column" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetPythonParenCompletionsResponse">
+        <xs:complexType />
+      </xs:element>
       <xs:element name="Result" nillable="true" type="s0:Result" />
       <xs:element name="int" type="xs:int" />
       <xs:element name="DiffResult" nillable="true" type="s0:DiffResult" />
@@ -129,6 +162,9 @@
           <xs:enumeration value="Scheme" />
           <xs:enumeration value="Nodejs" />
           <xs:enumeration value="Python3" />
+          <xs:enumeration value="Octave" />
+          <xs:enumeration value="CClang" />
+          <xs:enumeration value="CppClang" />
         </xs:restriction>
       </xs:simpleType>
     </xs:schema>
@@ -150,6 +186,18 @@
   </message>
   <message name="DiffSoapOut">
     <part name="parameters" element="s0:DiffResponse" />
+  </message>
+  <message name="GetPythonDotCompletionsSoapIn">
+    <part name="parameters" element="s0:GetPythonDotCompletions" />
+  </message>
+  <message name="GetPythonDotCompletionsSoapOut">
+    <part name="parameters" element="s0:GetPythonDotCompletionsResponse" />
+  </message>
+  <message name="GetPythonParenCompletionsSoapIn">
+    <part name="parameters" element="s0:GetPythonParenCompletions" />
+  </message>
+  <message name="GetPythonParenCompletionsSoapOut">
+    <part name="parameters" element="s0:GetPythonParenCompletionsResponse" />
   </message>
   <message name="DoWorkHttpGetIn">
     <part name="Program" type="s:string" />
@@ -181,6 +229,18 @@
   <message name="DiffHttpGetOut">
     <part name="Body" element="s0:DiffResult" />
   </message>
+  <message name="GetPythonDotCompletionsHttpGetIn">
+    <part name="source" type="s:string" />
+    <part name="line" type="s:int" />
+    <part name="column" type="s:int" />
+  </message>
+  <message name="GetPythonDotCompletionsHttpGetOut" />
+  <message name="GetPythonParenCompletionsHttpGetIn">
+    <part name="source" type="s:string" />
+    <part name="line" type="s:int" />
+    <part name="column" type="s:int" />
+  </message>
+  <message name="GetPythonParenCompletionsHttpGetOut" />
   <message name="DoWorkHttpPostIn">
     <part name="Program" type="s:string" />
     <part name="Input" type="s:string" />
@@ -211,6 +271,18 @@
   <message name="DiffHttpPostOut">
     <part name="Body" element="s0:DiffResult" />
   </message>
+  <message name="GetPythonDotCompletionsHttpPostIn">
+    <part name="source" type="s:string" />
+    <part name="line" type="s:int" />
+    <part name="column" type="s:int" />
+  </message>
+  <message name="GetPythonDotCompletionsHttpPostOut" />
+  <message name="GetPythonParenCompletionsHttpPostIn">
+    <part name="source" type="s:string" />
+    <part name="line" type="s:int" />
+    <part name="column" type="s:int" />
+  </message>
+  <message name="GetPythonParenCompletionsHttpPostOut" />
   <portType name="ServiceSoap">
     <operation name="DoWork">
       <input message="s0:DoWorkSoapIn" />
@@ -223,6 +295,14 @@
     <operation name="Diff">
       <input message="s0:DiffSoapIn" />
       <output message="s0:DiffSoapOut" />
+    </operation>
+    <operation name="GetPythonDotCompletions">
+      <input message="s0:GetPythonDotCompletionsSoapIn" />
+      <output message="s0:GetPythonDotCompletionsSoapOut" />
+    </operation>
+    <operation name="GetPythonParenCompletions">
+      <input message="s0:GetPythonParenCompletionsSoapIn" />
+      <output message="s0:GetPythonParenCompletionsSoapOut" />
     </operation>
   </portType>
   <portType name="ServiceSoap12">
@@ -238,6 +318,14 @@
       <input message="s0:DiffSoapIn" />
       <output message="s0:DiffSoapOut" />
     </operation>
+    <operation name="GetPythonDotCompletions">
+      <input message="s0:GetPythonDotCompletionsSoapIn" />
+      <output message="s0:GetPythonDotCompletionsSoapOut" />
+    </operation>
+    <operation name="GetPythonParenCompletions">
+      <input message="s0:GetPythonParenCompletionsSoapIn" />
+      <output message="s0:GetPythonParenCompletionsSoapOut" />
+    </operation>
   </portType>
   <portType name="ServiceHttpGet">
     <operation name="DoWork">
@@ -252,6 +340,14 @@
       <input message="s0:DiffHttpGetIn" />
       <output message="s0:DiffHttpGetOut" />
     </operation>
+    <operation name="GetPythonDotCompletions">
+      <input message="s0:GetPythonDotCompletionsHttpGetIn" />
+      <output message="s0:GetPythonDotCompletionsHttpGetOut" />
+    </operation>
+    <operation name="GetPythonParenCompletions">
+      <input message="s0:GetPythonParenCompletionsHttpGetIn" />
+      <output message="s0:GetPythonParenCompletionsHttpGetOut" />
+    </operation>
   </portType>
   <portType name="ServiceHttpPost">
     <operation name="DoWork">
@@ -265,6 +361,14 @@
     <operation name="Diff">
       <input message="s0:DiffHttpPostIn" />
       <output message="s0:DiffHttpPostOut" />
+    </operation>
+    <operation name="GetPythonDotCompletions">
+      <input message="s0:GetPythonDotCompletionsHttpPostIn" />
+      <output message="s0:GetPythonDotCompletionsHttpPostOut" />
+    </operation>
+    <operation name="GetPythonParenCompletions">
+      <input message="s0:GetPythonParenCompletionsHttpPostIn" />
+      <output message="s0:GetPythonParenCompletionsHttpPostOut" />
     </operation>
   </portType>
   <binding name="ServiceSoap" type="s0:ServiceSoap">
@@ -289,6 +393,24 @@
     </operation>
     <operation name="Diff">
       <soap:operation soapAction="http://rextester.com/Diff" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetPythonDotCompletions">
+      <soap:operation soapAction="http://rextester.com/GetPythonDotCompletions" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetPythonParenCompletions">
+      <soap:operation soapAction="http://rextester.com/GetPythonParenCompletions" style="document" />
       <input>
         <soap:body use="literal" />
       </input>
@@ -326,6 +448,24 @@
         <soap12:body use="literal" />
       </output>
     </operation>
+    <operation name="GetPythonDotCompletions">
+      <soap12:operation soapAction="http://rextester.com/GetPythonDotCompletions" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetPythonParenCompletions">
+      <soap12:operation soapAction="http://rextester.com/GetPythonParenCompletions" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
   </binding>
   <binding name="ServiceHttpGet" type="s0:ServiceHttpGet">
     <http:binding verb="GET" />
@@ -355,6 +495,20 @@
       <output>
         <mime:mimeXml part="Body" />
       </output>
+    </operation>
+    <operation name="GetPythonDotCompletions">
+      <http:operation location="/GetPythonDotCompletions" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output />
+    </operation>
+    <operation name="GetPythonParenCompletions">
+      <http:operation location="/GetPythonParenCompletions" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output />
     </operation>
   </binding>
   <binding name="ServiceHttpPost" type="s0:ServiceHttpPost">
@@ -386,19 +540,33 @@
         <mime:mimeXml part="Body" />
       </output>
     </operation>
+    <operation name="GetPythonDotCompletions">
+      <http:operation location="/GetPythonDotCompletions" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output />
+    </operation>
+    <operation name="GetPythonParenCompletions">
+      <http:operation location="/GetPythonParenCompletions" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output />
+    </operation>
   </binding>
   <service name="Service">
     <port name="ServiceSoap" binding="s0:ServiceSoap">
-      <soap:address location="http://226589.s.dedikuoti.lt/service/Service.asmx" />
+      <soap:address location="http://178.238.226.7/Service.asmx" />
     </port>
     <port name="ServiceSoap12" binding="s0:ServiceSoap12">
-      <soap12:address location="http://226589.s.dedikuoti.lt/service/Service.asmx" />
+      <soap12:address location="http://178.238.226.7/Service.asmx" />
     </port>
     <port name="ServiceHttpGet" binding="s0:ServiceHttpGet">
-      <http:address location="http://226589.s.dedikuoti.lt/service/Service.asmx" />
+      <http:address location="http://178.238.226.7/Service.asmx" />
     </port>
     <port name="ServiceHttpPost" binding="s0:ServiceHttpPost">
-      <http:address location="http://226589.s.dedikuoti.lt/service/Service.asmx" />
+      <http:address location="http://178.238.226.7/Service.asmx" />
     </port>
   </service>
 </definitions>

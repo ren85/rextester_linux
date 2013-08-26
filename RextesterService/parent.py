@@ -47,7 +47,7 @@ def setlimits(compiler):
 		resource.setrlimit(resource.RLIMIT_STACK, (100000000, 100000000))
 
 		
-		resource.setrlimit(resource.RLIMIT_AS, (500000000, 500000000))
+		resource.setrlimit(resource.RLIMIT_AS, (1500000000, 1500000000))
 		
 		
 		#resource.setrlimit(resource.RLIMIT_LOCKS, (10, 10))

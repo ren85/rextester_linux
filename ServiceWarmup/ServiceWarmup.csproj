@@ -39,9 +39,6 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="Web References\n226589_s_dedikuoti_lt\Reference.cs">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Compile>
     <Compile Include="Runs\IRun.cs" />
     <Compile Include="Runs\JavaRun.cs" />
     <Compile Include="Runs\CRun.cs" />
@@ -50,26 +47,11 @@
     <Compile Include="RunFactory.cs" />
     <Compile Include="Runs\ScalaRun.cs" />
     <Compile Include="Runs\GoRun.cs" />
+    <Compile Include="Web References\n178_238_226_7\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ItemGroup>
-    <WebReferences Include="Web References" />
-  </ItemGroup>
-  <ItemGroup>
-    <WebReferenceUrl Include="http://226589.s.dedikuoti.lt/service/Service.asmx">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\n226589_s_dedikuoti_lt</RelPath>
-      <UpdateFromURL>http://226589.s.dedikuoti.lt/service/Service.asmx</UpdateFromURL>
-    </WebReferenceUrl>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Web References\n226589_s_dedikuoti_lt\Service.disco" />
-    <None Include="Web References\n226589_s_dedikuoti_lt\Service.wsdl" />
-    <None Include="Web References\n226589_s_dedikuoti_lt\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
   <ItemGroup>
     <Folder Include="Runs\" />
   </ItemGroup>
@@ -78,5 +60,23 @@
       <Project>{A46FF583-E2FE-41C4-A4F2-E9976A6A3389}</Project>
       <Name>GlobalUtils</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://178.238.226.7/Service.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\n178_238_226_7</RelPath>
+      <UpdateFromURL>http://178.238.226.7/Service.asmx</UpdateFromURL>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\n178_238_226_7\Service.disco" />
+    <None Include="Web References\n178_238_226_7\Service.wsdl" />
+    <None Include="Web References\n178_238_226_7\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 </Project>
