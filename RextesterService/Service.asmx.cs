@@ -51,7 +51,7 @@ namespace RextesterService
 
 			var odata = engine.DoWork(idata);		
 			
-			Regex r = new Regex(engine.RootPath + @"\d+/\d+");
+			Regex r = new Regex(Engine.RootPath + @"\d+/\source");
 			if(Language == Languages.Javascript && !string.IsNullOrEmpty(odata.Output))
 				odata.Output = r.Replace(odata.Output, "source_file");
 				

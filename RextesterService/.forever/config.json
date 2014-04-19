@@ -1,0 +1,16 @@
+{
+  "root": "/home/ren/.forever",
+  "pidPath": "/home/ren/.forever/pids",
+  "sockPath": "/home/ren/.forever/sock",
+  "loglength": 100,
+  "logstream": false,
+  "columns": [
+    "uid",
+    "command",
+    "script",
+    "forever",
+    "pid",
+    "logfile",
+    "uptime"
+  ]
+}

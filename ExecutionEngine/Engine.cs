@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.IO.Compression;
 using System.Linq;
 
+
 namespace ExecutionEngine
 {
 	public class InputData
@@ -120,7 +121,8 @@ namespace ExecutionEngine
 		Python3,
 		Octave,
 		CClang,
-		CppClang
+		CppClang,
+		D
 	}	
 	
 	public class CompilerData
@@ -167,20 +169,20 @@ namespace ExecutionEngine
 		public Engine ()
 		{}
 		
-		public string RootPath
+		public static string RootPath
 		{
 			get
 			{
-				//return @"/home/ren/Desktop/rextester/linux/RextesterService/usercode/";				
+				//return @"/home/ren/Desktop/rextester_linux/RextesterService/usercode/";				
 				return @"/var/www/service/usercode/"; 
 			}
 		}
 		
-		string ParentRootPath
+		static string ParentRootPath
 		{
 			get
 			{
-				//return @"/home/ren/Desktop/rextester/linux/RextesterService/";
+				//return @"/home/ren/Desktop/rextester_linux/RextesterService/";
 				return @"/var/www/service/";
 			}
 		}
@@ -453,11 +455,14 @@ namespace ExecutionEngine
 				case Languages.CppClang:
 					ext = ".cpp";
 					break;
+				case Languages.D:
+					ext = ".d";
+					break;
 				default:
 					ext = ".unknown";
 					break;
 			}
-			string PathToSource = RootPath+dir+rand+ext;
+			string PathToSource = RootPath+dir+/*rand*/"source"+ext;
 			input.PathToSource = PathToSource;
 			input.BaseDir = RootPath+dir;
 			input.Rand = rand;
@@ -482,13 +487,13 @@ namespace ExecutionEngine
 			Stopwatch watch = new Stopwatch();			
 			using(Process process = new Process())
 			{
-				process.StartInfo.FileName = compiler;
-				process.StartInfo.Arguments = args;
+				process.StartInfo.FileName = ParentRootPath+"compile_parent.py";
+				process.StartInfo.Arguments = compiler+" "+args;
 				process.StartInfo.UseShellExecute = false;
 				process.StartInfo.CreateNoWindow = true;
 				process.StartInfo.RedirectStandardError = true;
-				process.StartInfo.RedirectStandardOutput = true;				
-				
+				process.StartInfo.RedirectStandardOutput = true;
+
 				watch.Start();
 				process.Start();
 				//process.PriorityClass = ProcessPriorityClass.AboveNormal;
@@ -500,7 +505,7 @@ namespace ExecutionEngine
                 Thread errorReader = new Thread(new ThreadStart(error.ReadOutput));
                 errorReader.Start();
 				
-				process.WaitForExit();				
+				process.WaitForExit();
 				watch.Stop();
 
 				CompileTimeMs = watch.ElapsedMilliseconds;

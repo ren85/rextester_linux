@@ -83,5 +83,6 @@
   <ItemGroup>
     <None Include="parent.py" />
     <None Include="codediff.py" />
+    <None Include="compile_parent.py" />
   </ItemGroup>
 </Project>

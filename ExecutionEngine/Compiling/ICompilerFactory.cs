@@ -55,6 +55,8 @@ namespace ExecutionEngine
 					return new CClangCompile();
 				case Languages.CppClang:
 					return new CPPClangCompile();
+				case Languages.D:
+					return new DCompile();
 				default:
 					return null;
 			}

@@ -21,9 +21,9 @@ namespace Test
 			//var testProgram = TestProgram.GetTestPrograms().Where(f => f.Name.Contains("Javascript") && f.Name.Contains("Hello")).Single();	
 				
 			
-			var testProgram = TestProgram.GetTestPrograms().Where(f => f.Name.Contains("Scheme_") && f.Name.Contains("_Hello")).Single();	
-			TestEngineThroughService(testProgram.Program, testProgram.Input, testProgram.Lang, testProgram.Args);
-			//TestEngineDirectly(testProgram.Program, testProgram.Input, testProgram.Lang, testProgram.Args);
+			var testProgram = TestProgram.GetTestPrograms().Where(f => f.Name.Contains("CPP_") && f.Name.Contains("_BAD_COMPILE")).Single();	
+			//TestEngineThroughService(testProgram.Program, testProgram.Input, testProgram.Lang, testProgram.Args);
+			TestEngineDirectly(testProgram.Program, testProgram.Input, testProgram.Lang, testProgram.Args);
 			
 			
 			//var res = Diff.GetDiff("", "");
@@ -1390,6 +1390,67 @@ int  main(void)
 							Args = "-Wall -std=gnu99 -O2 -o a.out source_file.c"
 						});
 
+				list.Add(new TestProgram()
+				       {
+							Program=
+@"/* This program prints a
+   hello world message
+   to the console.  */
+ 
+import std.file;
+
+int factorial(int n) {
+   int[] a = [ 0, 1, 1, 2, 3, 5, 8 ];
+   write(""test.txt"", a);
+   assert(cast(int[]) read(""test.txt"") == a);
+	return 0;
+}
+void main()
+{
+	return 0;
+}
+ 
+// computed at compile time
+enum y = factorial(0); // == 1
+enum x = factorial(4); // == 24
+
+void main()
+{
+    writeln(x);
+}
+",
+							Lang = Languages.D,
+							Name = "D_HELLO",
+							Args = "source_file.d -ofa.out"
+						});
+
+
+								list.Add(new TestProgram()
+				       {
+							Program=
+@"#include <iostream>
+#include <string>
+#include <vector>
+
+template<int N>
+inline int foo(int x)
+{
+    if (x == 0)
+        return N;
+    if (x & 1)
+        return foo<(N << 1) + 1>(x >> 1);
+    else
+        return foo<N << 1>(x >> 1);
+}
+
+int main()
+{
+    std::cout << foo<1>(10);
+}",
+							Lang = Languages.CPP,
+							Name = "CPP_BAD_COMPILE",
+							Args = "-Wall -std=c++11 -O2 -o a.out source_file.cpp"
+						});
 				return list;
 			}
 		}
