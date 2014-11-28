@@ -6,10 +6,10 @@ import resource
 import subprocess
 import time
 import signal
+import select
 #import codecs
 #import pwd
 #import grp
-
 
 
 #import getpass
@@ -44,11 +44,12 @@ def setlimits(compiler):
 		resource.setrlimit(resource.RLIMIT_MEMLOCK, (0, 0))		
 		resource.setrlimit(resource.RLIMIT_NOFILE, (30, 30))
 		resource.setrlimit(resource.RLIMIT_NPROC, (500, 500))
-		resource.setrlimit(resource.RLIMIT_STACK, (100000000, 100000000))
-
+		resource.setrlimit(resource.RLIMIT_STACK, (100000000, 100000000))		
 		
-		resource.setrlimit(resource.RLIMIT_AS, (1500000000, 1500000000))
-		
+		if compiler[0].startswith("octave"):
+			resource.setrlimit(resource.RLIMIT_AS, (4000000000, 40000000000))
+		else:
+			resource.setrlimit(resource.RLIMIT_AS, (1500000000, 1500000000))		
 		
 		#resource.setrlimit(resource.RLIMIT_LOCKS, (10, 10))
 		#resource.setrlimit(resource.RLIMIT_MSGQUEUE, (100000000, 100000000))
@@ -57,6 +58,9 @@ def setlimits(compiler):
 #print "hi from parent"
 
 os.setpgrp()
+
+#sys.stdout = codecs.getwriter('utf8')(sys.stdout)
+#sys.stderr = codecs.getwriter('utf8')(sys.stderr)
 
 #sys.stdout = codecs.getwriter('utf-16')(sys.stdout)
 #sys.stdin = codecs.getreader('utf-16')(sys.stdin)
@@ -74,6 +78,9 @@ if fin_time < time.time():
 		
 		#p.terminate()
 		#os.killpg(os.getpgid(p.pid), signal.SIGKILL)
+		if select.select([sys.stdin,],[],[],0.0)[0]:
+		        sys.stdin.readlines()
+
 		sys.stderr.write("Process killed, because it ran longer than "+str(delta)+" seconds.")
 		os.killpg(0, signal.SIGKILL)
 		#if p.poll() == None:
@@ -87,8 +94,9 @@ sys.stderr.write(str(p.returncode)+' '+str(usage_stats.ru_utime+usage_stats.ru_s
 #f.write('python parent before exit - ' + str(datetime.datetime.now()))
 #f.close()
 
+if select.select([sys.stdin,],[],[],0.0)[0]:
+        sys.stdin.readlines()
+
 os.killpg(0, signal.SIGKILL)
 #if p.poll() == None:
 	#os.kill(p.pid, -1*signal.SIGKILL)
-
-
