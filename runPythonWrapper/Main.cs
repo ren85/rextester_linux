@@ -21,7 +21,7 @@ namespace Test
 			//var testProgram = TestProgram.GetTestPrograms().Where(f => f.Name.Contains("Javascript") && f.Name.Contains("Hello")).Single();	
 				
 			
-			var testProgram = TestProgram.GetTestPrograms().Where(f => f.Name.Contains("CPP_") && f.Name.Contains("_BAD_COMPILE")).Single();	
+			var testProgram = TestProgram.GetTestPrograms().Where(f => f.Name.Contains("R_") && f.Name.Contains("_Hello")).Single();	
 			//TestEngineThroughService(testProgram.Program, testProgram.Input, testProgram.Lang, testProgram.Args);
 			TestEngineDirectly(testProgram.Program, testProgram.Input, testProgram.Lang, testProgram.Args);
 			
@@ -1208,135 +1208,17 @@ print(""ėųįėūįęėšįūęų"")
 				});
 				
 #endregion
-								#region scheme
+								#region octave
 				list.Add(new TestProgram()
 				         {
 					Program=@"
-%http://stackoverflow.com/a/12711092/579026
 
-%# init
-%# ------------------------
+%Title of this code
+%To view plots after 'plot' (and other plot-producing commands) this command must follow: 'print -dpng some_unique_plot_name.png;'
+%It exports current plot to png image which then is sent to your browser
 
-noise = @(x,A) A*randn(size(x));
-ns    = @(x,A) A*ones(size(x));
-
-
-h = figure(2); clf, hold on
-pos = get(h, 'position');
-set(h, 'position', [pos(1:2) 800 450]);
-
-
-blackline = {
-    'k', ...
-    'linewidth', 2};
-axisline = {
-    'k', ...
-    'linewidth', 3};
-
-textprops = {
-    'fontName','Comic Sans MS',...
-    'fontSize', 14,...
-    'lineWidth',3};
-
-
-%# Plot data
-%# ------------------------
-x  = 1:0.1:10;
-
-y0 = sin(x).*exp(-x/30) + 3;
-y1 = sin(x).*exp(-x/3) + 3;
-y2 = 3*exp(-(x-7).^6/.05) + 1;
-
-y0 = y0 + noise(x, 0.01);
-y1 = y1 + noise(x, 0.01);
-y2 = y2 + noise(x, 0.01);
-
-%# plot
-plot(x,y0, 'color', [0.7 0.7 0.7], 'lineWidth',3);
-
-plot(x,y1, 'w','lineWidth',7);
-plot(x,y1, 'b','lineWidth',3);
-
-plot(x,y2, 'w','lineWidth',7);
-plot(x,y2, 'r','lineWidth',3);
-
-
-
-
-%# text
-%# ------------------------
-ll(1) = text(1.3, 4.2,...
-    {'Walking back to my'
-    'front door at night:'});
-
-ll(2) = text(5, 0.7, 'yard');
-ll(3) = text(6.2, 0.7, 'steps');
-ll(4) = text(7, 0.7, 'door');
-ll(5) = text(8, 0.7, 'inside');
-
-set(ll, textprops{:});
-
-
-%# arrows & lines
-%# ------------------------
-
-%# box around 'walking back...'
-xx = 1.2:0.1:3.74;
-yy = ns(xx, 4.6) + noise(xx, 0.007);
-plot(xx, yy, blackline{:})
-
-xx = 1.2:0.1:3.74;
-yy = ns(xx, 3.8) + noise(xx, 0.007);
-plot(xx, yy, blackline{:})
-
-yy = 3.8:0.1:4.6;
-xx = ns(yy, 1.2) + noise(yy, 0.007);
-plot(xx, yy, blackline{:})
-
-xx = ns(yy, 3.74) + noise(yy, 0.007);
-plot(xx, yy, blackline{:})
-
-%# left arrow
-x_arr = 1.2:0.1:4.8;
-y_arr = 0.65 * ones(size(x_arr)) + noise(x_arr, 0.005);
-plot(x_arr, y_arr, blackline{:})
-x_head = [1.1 1.6 1.62];
-y_head = [0.65 0.72 0.57];
-patch(x_head, y_head, 'k')
-
-%# right arrow
-x_arr = 8.7:0.1:9.8;
-y_arr = 0.65 * ones(size(x_arr)) + noise(x_arr, 0.005);
-plot(x_arr, y_arr, blackline{:})
-x_head = [9.8 9.3 9.3];
-y_head = [0.65 0.72 0.57];
-patch(x_head, y_head, 'k')
-
-%# left line on axis
-y_line = 0.8:0.1:1.1;
-x_line = ns(y_line, 6.5) + noise(y_line, 0.005);
-plot(x_line, y_line, blackline{:})
-
-%# right line on axis
-y_line = 0.8:0.1:1.1;
-x_line = ns(y_line, 7.2) + noise(y_line, 0.005);
-plot(x_line, y_line, blackline{:})
-
-%# axes
-x_xax = x;
-y_xax = 0.95 + noise(x_xax, 0.01);
-y_yax = 0.95:0.1:5;
-x_yax = x(1) + noise(y_yax, 0.01);
-plot(x_xax, y_xax, axisline{:})
-plot(x_yax, y_yax, axisline{:})
-
-
-% finalize 
-%# ------------------------
-
-xlim([0.95 10])
-ylim([0 5])
-axis off
+x=1:0.1:10;
+plot(x, sin(x));
 print -dpng some_name.png;
 
 ",
@@ -1451,6 +1333,45 @@ int main()
 							Name = "CPP_BAD_COMPILE",
 							Args = "-Wall -std=c++11 -O2 -o a.out source_file.cpp"
 						});
+
+				#region scheme
+				list.Add(new TestProgram()
+				         {
+					Program=@"
+
+cat(""hello\n"")
+require(stats)
+plot(cars)
+
+
+# make plot
+
+
+#png('filename1.png')
+# make plot
+
+lines(lowess(cars))
+
+
+#png('filename2.png')
+plot(sin, -pi, 2*pi) # see ?plot.function
+#dev.off()
+
+## Discrete Distribution Plot:
+plot(table(rpois(100, 5)), type = ""h"", col = ""red"", lwd = 10,
+main = ""rpois(100, lambda = 5)"")
+
+## Simple quantiles/ECDF, see ecdf() {library(stats)} for a better one:
+plot(x <- sort(rnorm(47)), type = ""s"", main = ""plot(x, type = \""s\"")"")
+points(x, cex = .5, col = ""dark red"")
+",
+					Lang = Languages.R,
+					Name = "R_Hello"
+				});
+
+
+				
+#endregion
 				return list;
 			}
 		}

@@ -122,7 +122,8 @@ namespace ExecutionEngine
 		Octave,
 		CClang,
 		CppClang,
-		D
+		D,
+		R
 	}	
 	
 	public class CompilerData
@@ -336,6 +337,31 @@ namespace ExecutionEngine
 						}
 						odata.Files = files.OrderBy(f => f.CreationDate).Select(f => f.Data).ToList();
 					}
+					if(idata.Lang == Languages.R)
+					{
+						if(File.Exists(Path.Combine(cdata.CleanThis, "Rplots.pdf")))
+						{
+							using(var p = new Process())
+							{
+								process.StartInfo.FileName = "pdftoppm";
+								process.StartInfo.WorkingDirectory = cdata.CleanThis;
+								process.StartInfo.Arguments = "-png Rplots.pdf plots";
+								process.StartInfo.UseShellExecute = false;
+								process.StartInfo.CreateNoWindow = true;
+								process.Start();
+								process.WaitForExit();
+							}
+							List<FileData> files = new List<FileData>();
+							foreach (string file_name in Directory.GetFiles(cdata.CleanThis, "*.png"))
+							{ 
+								var file = new FileData();
+								file.Data = File.ReadAllBytes(file_name);
+								file.CreationDate = File.GetCreationTime(file_name);
+								files.Add(file);
+							}
+							odata.Files = files.OrderBy(f => f.CreationDate).Select(f => f.Data).ToList();
+						}
+					}
 				}
 				watch.Stop();
 
@@ -457,6 +483,9 @@ namespace ExecutionEngine
 					break;
 				case Languages.D:
 					ext = ".d";
+					break;
+				case Languages.R:
+					ext = ".r";
 					break;
 				default:
 					ext = ".unknown";

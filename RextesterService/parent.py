@@ -29,7 +29,7 @@ import select
 #f.close()
 def setlimits(compiler):
 
-		if compiler[0].startswith("octave"):
+		if compiler[0].startswith("octave") or compiler[0] == "R":
 			resource.setrlimit(resource.RLIMIT_CPU, (15, 15))
 		else:
 			resource.setrlimit(resource.RLIMIT_CPU, (5, 5))
@@ -37,7 +37,7 @@ def setlimits(compiler):
 		resource.setrlimit(resource.RLIMIT_CORE, (0, 0))
 		resource.setrlimit(resource.RLIMIT_DATA, (100000000, 100000000))
 		
-		if compiler[0].startswith("octave"):
+		if compiler[0].startswith("octave") or compiler[0] == "R":
 			resource.setrlimit(resource.RLIMIT_FSIZE, (1000000, 1000000))
 		else:
 			resource.setrlimit(resource.RLIMIT_FSIZE, (0, 0))		
@@ -46,7 +46,7 @@ def setlimits(compiler):
 		resource.setrlimit(resource.RLIMIT_NPROC, (500, 500))
 		resource.setrlimit(resource.RLIMIT_STACK, (100000000, 100000000))		
 		
-		if compiler[0].startswith("octave"):
+		if compiler[0].startswith("octave") or compiler[0] == "R":
 			resource.setrlimit(resource.RLIMIT_AS, (4000000000, 40000000000))
 		else:
 			resource.setrlimit(resource.RLIMIT_AS, (1500000000, 1500000000))		
@@ -67,7 +67,7 @@ os.setpgrp()
 p = subprocess.Popen(sys.argv[1:], preexec_fn=setlimits(sys.argv[1:]))
 
 delta = 10
-if sys.argv[1].startswith("octave"):
+if sys.argv[1].startswith("octave") or sys.argv[1] == "R":
 	delta = 20
 fin_time = time.time() + delta
 while p.poll() == None and fin_time > time.time():

@@ -12,7 +12,7 @@ namespace ExecutionEngine
 		public CompilerData Compile (InputData idata, CompilerData cdata)
 		{
 			//cdata.ExecuteThis = " -f -q --no-window-system " + idata.PathToSource;
-			cdata.ExecuteThis = " -q --no-window-system " + idata.PathToSource;
+			cdata.ExecuteThis = " -q -f --no-window-system " + idata.PathToSource;
 			cdata.Executor = "octave";
 			cdata.Success = true;
 			string source = File.ReadAllText(idata.PathToSource);

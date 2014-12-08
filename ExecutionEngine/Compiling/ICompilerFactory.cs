@@ -57,6 +57,8 @@ namespace ExecutionEngine
 					return new CPPClangCompile();
 				case Languages.D:
 					return new DCompile();
+				case Languages.R:
+					return new RCompile();
 				default:
 					return null;
 			}

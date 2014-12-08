@@ -1,19 +1,23 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="RextesterService/parent.py">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ExecutionEngine/Engine.cs">
     <Files>
-      <File FileName="RextesterService/parent.py" Line="69" Column="7" />
-      <File FileName="ExecutionEngine/Engine.cs" Line="236" Column="43" />
+      <File FileName="RextesterService/parent.py" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Engine.cs" Line="187" Column="5" />
+      <File FileName="GlobalUtils/TopSecret.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Compiling/OctaveCompile.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Compiling/RCompile.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Compiling/LispCompile.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Compiling/ICompilerFactory.cs" Line="1" Column="1" />
+      <File FileName="runPythonWrapper/Main.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="ExecutionEngine" expanded="True" />
-          <Node name="GlobalUtils" expanded="True" />
-          <Node name="RextesterService" expanded="True">
-            <Node name="parent.py" selected="True" />
-            <Node name="Service.asmx" expanded="True" />
+        <State expanded="True" selected="True">
+          <Node name="ExecutionEngine" expanded="True">
+            <Node name="Compiling" expanded="True" />
           </Node>
+          <Node name="RextesterService" expanded="True" />
           <Node name="Services" expanded="True" />
           <Node name="ServiceWarmup" expanded="True" />
           <Node name="Test" expanded="True" />
