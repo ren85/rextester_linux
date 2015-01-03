@@ -21,7 +21,7 @@ namespace Test
 			//var testProgram = TestProgram.GetTestPrograms().Where(f => f.Name.Contains("Javascript") && f.Name.Contains("Hello")).Single();	
 				
 			
-			var testProgram = TestProgram.GetTestPrograms().Where(f => f.Name.Contains("R_") && f.Name.Contains("_Hello")).Single();	
+			var testProgram = TestProgram.GetTestPrograms().Where(f => f.Name.Contains("Tcl_") && f.Name.Contains("_Hello")).Single();	
 			//TestEngineThroughService(testProgram.Program, testProgram.Input, testProgram.Lang, testProgram.Args);
 			TestEngineDirectly(testProgram.Program, testProgram.Input, testProgram.Lang, testProgram.Args);
 			
@@ -1367,6 +1367,23 @@ points(x, cex = .5, col = ""dark red"")
 ",
 					Lang = Languages.R,
 					Name = "R_Hello"
+				});
+
+
+				
+#endregion
+
+				#region tcl
+				list.Add(new TestProgram()
+				         {
+					Program=@"
+# with variables, it is faster to protect this string using curly braces
+set x 1
+set sum [expr {$x + 2 + 3 + 4 + 5}]
+puts ""The sum of the numbers 1..5 is $sum.""
+",
+					Lang = Languages.Tcl,
+					Name = "Tcl_Hello"
 				});
 
 

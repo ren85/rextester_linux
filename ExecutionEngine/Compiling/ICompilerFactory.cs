@@ -59,6 +59,8 @@ namespace ExecutionEngine
 					return new DCompile();
 				case Languages.R:
 					return new RCompile();
+				case Languages.Tcl:
+					return new TclCompile();
 				default:
 					return null;
 			}

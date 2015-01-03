@@ -66,6 +66,7 @@
     <Compile Include="Compiling\CPPClangCompile.cs" />
     <Compile Include="Compiling\DCompile.cs" />
     <Compile Include="Compiling\RCompile.cs" />
+    <Compile Include="Compiling\TclCompile.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

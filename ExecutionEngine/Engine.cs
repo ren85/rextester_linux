@@ -123,7 +123,8 @@ namespace ExecutionEngine
 		CClang,
 		CppClang,
 		D,
-		R
+		R,
+		Tcl
 	}	
 	
 	public class CompilerData
@@ -486,6 +487,9 @@ namespace ExecutionEngine
 					break;
 				case Languages.R:
 					ext = ".r";
+					break;
+				case Languages.Tcl:
+					ext = ".tcl";
 					break;
 				default:
 					ext = ".unknown";
