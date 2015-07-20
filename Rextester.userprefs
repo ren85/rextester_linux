@@ -1,35 +1,23 @@
-﻿<Properties>
+﻿<Properties StartupItem="runPythonWrapper/Test.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ExecutionEngine/Engine.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="GlobalUtils/TopSecret.cs">
     <Files>
       <File FileName="RextesterService/parent.py" Line="1" Column="1" />
       <File FileName="ExecutionEngine/Engine.cs" Line="187" Column="5" />
-      <File FileName="GlobalUtils/TopSecret.cs" Line="1" Column="1" />
+      <File FileName="GlobalUtils/TopSecret.cs" Line="18" Column="16" />
       <File FileName="ExecutionEngine/Compiling/OctaveCompile.cs" Line="1" Column="1" />
       <File FileName="ExecutionEngine/Compiling/RCompile.cs" Line="1" Column="1" />
       <File FileName="ExecutionEngine/Compiling/LispCompile.cs" Line="1" Column="1" />
       <File FileName="ExecutionEngine/Compiling/ICompilerFactory.cs" Line="1" Column="1" />
       <File FileName="runPythonWrapper/Main.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Compiling/CClangCompile.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Compiling/DCompile.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Compiling/GoCompile.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Compiling/HaskellCompile.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Compiling/JavascriptCompile.cs" Line="15" Column="22" />
+      <File FileName="ExecutionEngine/Compiling/ScalaCompile.cs" Line="1" Column="1" />
+      <File FileName="RextesterService/Service.asmx" Line="1" Column="1" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True" selected="True">
-          <Node name="ExecutionEngine" expanded="True">
-            <Node name="Compiling" expanded="True" />
-          </Node>
-          <Node name="RextesterService" expanded="True" />
-          <Node name="Services" expanded="True" />
-          <Node name="ServiceWarmup" expanded="True" />
-          <Node name="Test" expanded="True" />
-        </State>
-      </Pad>
-      <Pad Id="ClassPad">
-        <State expanded="True" selected="True" />
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
