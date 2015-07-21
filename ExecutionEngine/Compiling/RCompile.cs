@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Collections.Generic;
 
 namespace ExecutionEngine
 {
@@ -11,7 +12,10 @@ namespace ExecutionEngine
 
 		public CompilerData Compile (InputData idata, CompilerData cdata)
 		{
-			cdata.ExecuteThis = " --slave -f " + idata.PathToSource;
+			List<string> dropLines = new List<string>();
+			dropLines.Add("sh: 1: rm: Permission denied");
+
+			cdata.ExecuteThis = " --slave --vanilla -f " + idata.PathToSource;
 			cdata.Executor = "R";
 			cdata.Success = true;
 			string source = File.ReadAllText(idata.PathToSource);

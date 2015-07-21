@@ -2,10 +2,10 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" />
   <MonoDevelop.Ide.Workbench ActiveDocument="GlobalUtils/TopSecret.cs">
     <Files>
-      <File FileName="RextesterService/parent.py" Line="1" Column="1" />
-      <File FileName="ExecutionEngine/Engine.cs" Line="187" Column="5" />
-      <File FileName="GlobalUtils/TopSecret.cs" Line="18" Column="16" />
-      <File FileName="ExecutionEngine/Compiling/OctaveCompile.cs" Line="1" Column="1" />
+      <File FileName="RextesterService/parent.py" Line="103" Column="1" />
+      <File FileName="ExecutionEngine/Engine.cs" Line="523" Column="50" />
+      <File FileName="GlobalUtils/TopSecret.cs" Line="18" Column="13" />
+      <File FileName="ExecutionEngine/Compiling/OctaveCompile.cs" Line="15" Column="64" />
       <File FileName="ExecutionEngine/Compiling/RCompile.cs" Line="1" Column="1" />
       <File FileName="ExecutionEngine/Compiling/LispCompile.cs" Line="1" Column="1" />
       <File FileName="ExecutionEngine/Compiling/ICompilerFactory.cs" Line="1" Column="1" />
@@ -14,10 +14,32 @@
       <File FileName="ExecutionEngine/Compiling/DCompile.cs" Line="1" Column="1" />
       <File FileName="ExecutionEngine/Compiling/GoCompile.cs" Line="1" Column="1" />
       <File FileName="ExecutionEngine/Compiling/HaskellCompile.cs" Line="1" Column="1" />
-      <File FileName="ExecutionEngine/Compiling/JavascriptCompile.cs" Line="15" Column="22" />
-      <File FileName="ExecutionEngine/Compiling/ScalaCompile.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Compiling/JavascriptCompile.cs" Line="15" Column="52" />
+      <File FileName="ExecutionEngine/Compiling/ScalaCompile.cs" Line="38" Column="54" />
       <File FileName="RextesterService/Service.asmx" Line="1" Column="1" />
+      <File FileName="RextesterService/compile_parent.py" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Compiling/ObjectiveCCompile.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Compiling/PascalCompile.cs" Line="38" Column="92" />
+      <File FileName="RextesterService/Service.asmx.cs" Line="107" Column="40" />
+      <File FileName="ExecutionEngine/Diff.cs" Line="22" Column="3" />
+      <File FileName="README.md" Line="28" Column="9" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Rextester" expanded="True">
+            <Node name="Solution Items" expanded="True" />
+            <Node name="ExecutionEngine" expanded="True" />
+            <Node name="GlobalUtils" expanded="True">
+              <Node name="TopSecret.cs" selected="True" />
+            </Node>
+            <Node name="RextesterService" expanded="True">
+              <Node name="Service.asmx" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
