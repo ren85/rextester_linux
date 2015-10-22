@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 using System.Collections.Generic;
 using ExecutionEngine;
 using System.Linq;
+using Services;
 
 
 namespace Test
@@ -14,7 +15,18 @@ namespace Test
 	class MainClass
 	{	
 		public static void Main (string[] args)
-		{						
+		{		
+			var prog = 
+@"#include <iostream>
+#include <string>
+#include <vector>
+int main()
+{
+    std::vector<int> *s;
+    s->
+}
+";
+			var res = YcmdEngine.GetCppCompletions (prog, 6, 7);
 			//var testProgram = TestProgram.GetTestPrograms().Where(f => f.Name.Contains("Java") && f.Name.Contains("Hello")).Single();					
 			//var testProgram = TestProgram.GetTestPrograms().Where(f => f.Name.Contains("Python") && f.Name.Contains("Hello")).Single();	
 			//var testProgram = TestProgram.GetTestPrograms().Where(f => f.Name.Contains("C_") && f.Name.Contains("Hello")).Single();	

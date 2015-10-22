@@ -24,6 +24,11 @@ namespace Services
 		{
 			return CodeCompletion.GetPythonCompletion(source, line, column, "py_paren.py");
 		}
+
+		public static List<string> GetCPP_Completions(string source, int line, int column)
+		{
+			return YcmdEngine.GetCppCompletions(source, line, column);
+		}
 	}
 }
 

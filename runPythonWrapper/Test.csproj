@@ -37,6 +37,9 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Core" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net35\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -54,6 +57,10 @@
     <ProjectReference Include="..\GlobalUtils\GlobalUtils.csproj">
       <Project>{A46FF583-E2FE-41C4-A4F2-E9976A6A3389}</Project>
       <Name>GlobalUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\Services.csproj">
+      <Project>{9C63CCDA-EDBA-49AB-8951-482E185B03D8}</Project>
+      <Name>Services</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -80,5 +87,6 @@
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

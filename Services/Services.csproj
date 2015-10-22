@@ -32,11 +32,18 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="Mono.Http" />
+    <Reference Include="System.Net" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net35\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="CodeCompletion.cs" />
     <Compile Include="Utils.cs" />
+    <Compile Include="YcmdEngine.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -45,5 +52,6 @@
   <ItemGroup>
     <None Include="Python\py_paren.py" />
     <None Include="Python\py_dot.py" />
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

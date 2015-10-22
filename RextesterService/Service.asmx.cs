@@ -126,6 +126,17 @@ namespace RextesterService
 			HttpContext.Current.Response.Write(json.Serialize(CodeCompletion.GetPythonParenCompletion(source, line, column)));
 		}
 
+		[WebMethod]
+		public string GetCPPCompletions(string source, int line, int column)
+		{
+			source = Decompress(source);
+			//HttpContext.Current.Response.AppendHeader("Access-Control-Allow-Origin", "*");
+			var res = CodeCompletion.GetCPP_Completions (source, line, column);
+			JavaScriptSerializer json = new JavaScriptSerializer();
+			var s = json.Serialize(res);		
+			return Compress(s);
+		}
+
 		string Compress(string text)
         {
         	 if(string.IsNullOrEmpty(text))
