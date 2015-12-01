@@ -10,7 +10,8 @@ namespace Services
 	{
 		public static List<string> GetCppCompletions(string code, int line, int column)
 		{
-			string template = @"{__MAGIC__1, ""filepath"": ""lol"", ""file_data"": {""lol"": {""filetypes"": [""cpp""], __MAGIC__2}}, ""line_num"": __MAGIC__3, ""column_num"": __MAGIC__4, __MAGIC__5, ""filetypes"": [""cpp""], ""start_column"": __MAGIC__6}";
+			var rn = (new Random ()).Next (Int32.MaxValue - 1).ToString ();
+			string template = @"{__MAGIC__1, ""filepath"": """+rn+@""", ""file_data"": {"""+rn+@""": {""filetypes"": [""cpp""], __MAGIC__2}}, ""line_num"": __MAGIC__3, ""column_num"": __MAGIC__4, __MAGIC__5, ""filetypes"": [""cpp""], ""start_column"": __MAGIC__6}";
 
 			var line_val = code.Split ("\n".ToCharArray ()) [line].Substring (0, column);
 			string query = "";
