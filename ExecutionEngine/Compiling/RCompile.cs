@@ -13,7 +13,7 @@ namespace ExecutionEngine
 		public CompilerData Compile (InputData idata, CompilerData cdata)
 		{
 			List<string> dropLines = new List<string>();
-			dropLines.Add("sh: 1: rm: Permission denied");
+			dropLines.Add("sh: /bin/rm: Permission denied");
 
 			cdata.ExecuteThis = " --slave --vanilla -f " + idata.PathToSource;
 			cdata.Executor = "R";
