@@ -223,6 +223,7 @@ namespace ExecutionEngine
 				using(Process process = new Process())
 				{
 					process.StartInfo.FileName = ParentRootPath+"parent.py";
+					//process.StartInfo.FileName = "/home/ren/a.out";
 					process.StartInfo.Arguments = cdata.Executor+(string.IsNullOrEmpty(cdata.Executor) ? "" : " ")+cdata.ExecuteThis;
 					process.StartInfo.UseShellExecute = false;
 					process.StartInfo.CreateNoWindow = true;

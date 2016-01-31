@@ -16,7 +16,7 @@ namespace Test
 	{	
 		public static void Main (string[] args)
 		{		
-			var prog = 
+			/*var prog = 
 @"#include <iostream>
 #include <string>
 #include <vector>
@@ -26,14 +26,14 @@ int main()
     s->
 }
 ";
-			var res = YcmdEngine.GetCppCompletions (prog, 6, 7);
+			var res = YcmdEngine.GetCppCompletions (prog, 6, 7);*/
 			//var testProgram = TestProgram.GetTestPrograms().Where(f => f.Name.Contains("Java") && f.Name.Contains("Hello")).Single();					
 			//var testProgram = TestProgram.GetTestPrograms().Where(f => f.Name.Contains("Python") && f.Name.Contains("Hello")).Single();	
 			//var testProgram = TestProgram.GetTestPrograms().Where(f => f.Name.Contains("C_") && f.Name.Contains("Hello")).Single();	
 			//var testProgram = TestProgram.GetTestPrograms().Where(f => f.Name.Contains("Javascript") && f.Name.Contains("Hello")).Single();	
 				
 			
-			var testProgram = TestProgram.GetTestPrograms().Where(f => f.Name.Contains("Tcl_") && f.Name.Contains("_Hello")).Single();	
+			var testProgram = TestProgram.GetTestPrograms().Where(f => f.Name.Contains("Haskell") && f.Name.Contains("_GHC")).Single();	
 			//TestEngineThroughService(testProgram.Program, testProgram.Input, testProgram.Lang, testProgram.Args);
 			TestEngineDirectly(testProgram.Program, testProgram.Input, testProgram.Lang, testProgram.Args);
 			
@@ -1051,6 +1051,29 @@ main = do
 							Input = "abc",
 							Args = "-o a.out source_file.hs"
 						});
+
+
+				list.Add(new TestProgram()
+					{
+						Program=@"
+import GHC
+import GhcMonad
+
+main = runGhc (Just ""/usr/lib/ghc"") $ do
+  flags <- getSessionDynFlags
+  setSessionDynFlags flags
+  imps <- mapM parseImportDecl [""import Prelude""]
+  setContext (map IIDecl imps)
+
+  runStmt ""putStrLn \""1\"""" RunToCompletion
+  liftIO $ putStrLn ""2""
+						
+",
+						Lang = Languages.Haskell,
+						Name = "Haskell_GHC",
+						Input = "",
+						Args = "-o a.out source_file.hs -package ghc"
+					});
 				#endregion
 				#region
 				list.Add(new TestProgram()

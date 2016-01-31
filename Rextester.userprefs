@@ -1,26 +1,38 @@
-﻿<Properties StartupItem="RextesterService/RextesterService.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" PreferredExecutionTarget="abiword" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Services/YcmdEngine.cs">
+﻿<Properties StartupItem="runPythonWrapper/Test.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ExecutionEngine/Engine.cs">
     <Files>
       <File FileName="runPythonWrapper/Main.cs" Line="1" Column="1" />
-      <File FileName="Services/YcmdEngine.cs" Line="6" Column="1" />
+      <File FileName="Services/YcmdEngine.cs" Line="9" Column="15" />
       <File FileName="GlobalUtils/TopSecret.cs" Line="1" Column="1" />
-      <File FileName="ExecutionEngine/Engine.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Engine.cs" Line="188" Column="5" />
       <File FileName="RextesterService/Service.asmx.cs" Line="1" Column="1" />
       <File FileName="Services/CodeCompletion.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Compiling/JavascriptCompile.cs" Line="15" Column="56" />
+      <File FileName="ExecutionEngine/Compiling/ObjectiveCCompile.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Diff.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Compiling/ScalaCompile.cs" Line="16" Column="45" />
+      <File FileName="ExecutionEngine/Compiling/HaskellCompile.cs" Line="1" Column="1" />
+      <File FileName="RextesterService/parent.py" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Compiling/CPPClangCompile.cs" Line="15" Column="32" />
+      <File FileName="ExecutionEngine/Compiling/PhpCompile.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Compiling/PrologCompile.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Compiling/SchemeCompile.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Compiling/TclCompile.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/home/ren/Desktop/rextester/linux/runPythonWrapper/Main.cs" line="75" column="1" />
-      <Breakpoint file="/home/ren/Desktop/rextester_linux/Services/YcmdEngine.cs" line="38" column="1" />
-      <Breakpoint file="/home/ren/Desktop/rextester_linux/Services/YcmdEngine.cs" line="13" column="1" />
-      <Breakpoint file="/home/ren/Desktop/rextester_linux/Services/YcmdEngine.cs" line="23" column="1" />
+      <Breakpoint file="/home/ren/Desktop/rextester_linux/runPythonWrapper/Main.cs" line="36" column="114" />
+      <Breakpoint file="/home/ren/Desktop/rextester_linux/runPythonWrapper/Main.cs" line="92" column="1" />
+      <Breakpoint file="/home/ren/Desktop/rextester_linux/ExecutionEngine/Engine.cs" line="204" column="1" />
+      <Breakpoint traceExpression="{error}" file="/home/ren/Desktop/rextester_linux/ExecutionEngine/Engine.cs" line="224" column="1" />
+      <Breakpoint file="/home/ren/Desktop/rextester_linux/ExecutionEngine/Engine.cs" line="625" column="1" />
+      <Breakpoint file="/home/ren/Desktop/rextester_linux/ExecutionEngine/Engine.cs" line="645" column="1" />
+      <Breakpoint file="/home/ren/Desktop/rextester_linux/ExecutionEngine/Engine.cs" line="236" column="1" />
+      <Breakpoint file="/home/ren/Desktop/rextester_linux/ExecutionEngine/Engine.cs" line="234" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
-    <Watch file="ExecutionEngine/Engine.cs" line="239" offsetX="1036" offsetY="3808" expression="info" liveUpdate="False" />
-    <Watch file="ExecutionEngine/Engine.cs" line="224" offsetX="623" offsetY="3568" expression="error" liveUpdate="False" />
-    <Watch file="ExecutionEngine/Engine.cs" line="224" offsetX="623" offsetY="3568" expression="error" liveUpdate="False" />
-  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

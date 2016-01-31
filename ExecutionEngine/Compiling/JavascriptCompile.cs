@@ -12,7 +12,7 @@ namespace ExecutionEngine
 		public CompilerData Compile (InputData idata, CompilerData cdata)
 		{
 			cdata.ExecuteThis = idata.PathToSource;
-			cdata.Executor = "/home/ren/v8/out/ia32.release/d8";
+			cdata.Executor = "/home/ren/v8-trunk/out/x64.release/d8";
 			cdata.Success = true;
 			return cdata;
 		}

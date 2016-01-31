@@ -1,0 +1,7 @@
+/home/ren/Desktop/rextester_linux/ServiceWarmup/obj/x86/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.cs
+/home/ren/Desktop/rextester_linux/ServiceWarmup/bin/Debug/ServiceWarmup.exe.mdb
+/home/ren/Desktop/rextester_linux/ServiceWarmup/bin/Debug/ServiceWarmup.exe
+/home/ren/Desktop/rextester_linux/ServiceWarmup/obj/x86/Debug/ServiceWarmup.exe
+/home/ren/Desktop/rextester_linux/ServiceWarmup/obj/x86/Debug/ServiceWarmup.exe.mdb
+/home/ren/Desktop/rextester_linux/ServiceWarmup/bin/Debug/GlobalUtils.dll
+/home/ren/Desktop/rextester_linux/ServiceWarmup/bin/Debug/GlobalUtils.dll.mdb
