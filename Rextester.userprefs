@@ -1,24 +1,10 @@
 ﻿<Properties StartupItem="runPythonWrapper/Test.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ExecutionEngine/Engine.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Services/YcmdEngine.cs">
     <Files>
-      <File FileName="runPythonWrapper/Main.cs" Line="1" Column="1" />
-      <File FileName="Services/YcmdEngine.cs" Line="9" Column="15" />
-      <File FileName="GlobalUtils/TopSecret.cs" Line="1" Column="1" />
-      <File FileName="ExecutionEngine/Engine.cs" Line="188" Column="5" />
-      <File FileName="RextesterService/Service.asmx.cs" Line="1" Column="1" />
-      <File FileName="Services/CodeCompletion.cs" Line="1" Column="1" />
-      <File FileName="ExecutionEngine/Compiling/JavascriptCompile.cs" Line="15" Column="56" />
-      <File FileName="ExecutionEngine/Compiling/ObjectiveCCompile.cs" Line="1" Column="1" />
-      <File FileName="ExecutionEngine/Diff.cs" Line="1" Column="1" />
-      <File FileName="ExecutionEngine/Compiling/ScalaCompile.cs" Line="16" Column="45" />
-      <File FileName="ExecutionEngine/Compiling/HaskellCompile.cs" Line="1" Column="1" />
-      <File FileName="RextesterService/parent.py" Line="1" Column="1" />
-      <File FileName="ExecutionEngine/Compiling/CPPClangCompile.cs" Line="15" Column="32" />
-      <File FileName="ExecutionEngine/Compiling/PhpCompile.cs" Line="1" Column="1" />
-      <File FileName="ExecutionEngine/Compiling/PrologCompile.cs" Line="1" Column="1" />
-      <File FileName="ExecutionEngine/Compiling/SchemeCompile.cs" Line="1" Column="1" />
-      <File FileName="ExecutionEngine/Compiling/TclCompile.cs" Line="1" Column="1" />
+      <File FileName="Services/YcmdEngine.cs" Line="43" Column="11" />
+      <File FileName="Services/CodeCompletion.cs" Line="30" Column="33" />
+      <File FileName="RextesterService/Service.asmx.cs" Line="134" Column="30" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

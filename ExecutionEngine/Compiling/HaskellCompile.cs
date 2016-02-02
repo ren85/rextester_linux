@@ -17,7 +17,7 @@ namespace ExecutionEngine
 			dropLines.Add("Compiling");
 			dropLines.Add("Linking");
 			
-			string compiler = "ghc";
+			string compiler = "/opt/ghc/8.0.1/bin/ghc";
 
 			if(string.IsNullOrEmpty(idata.Compiler_args) || !idata.Compiler_args.Contains("-o a.out"))
 			{

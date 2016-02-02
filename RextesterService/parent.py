@@ -64,6 +64,7 @@ os.setpgrp()
 
 #sys.stdout = codecs.getwriter('utf-16')(sys.stdout)
 #sys.stdin = codecs.getreader('utf-16')(sys.stdin)
+os.environ["HOME"] = "/var/www"
 p = subprocess.Popen(sys.argv[1:], preexec_fn=setlimits(sys.argv[1:]))
 
 delta = 10
