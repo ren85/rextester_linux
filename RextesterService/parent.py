@@ -8,7 +8,7 @@ import time
 import signal
 import select
 
-def runProcess(exe):    
+def runProcess(exe):
     p = subprocess.Popen(exe, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     while(True):
         line = p.stdout.readline()
@@ -18,9 +18,10 @@ def runProcess(exe):
             break
 
 def kill_by_pid(pid):
+
     for line in runProcess(("ps  -o pid --ppid " + str(pid)).split()):
         if line.strip().isdigit():
-            kill_by_pid(line)
+            kill_by_pid(line,)
             try:
                 os.kill(int(line), signal.SIGKILL)
             except:
@@ -32,8 +33,8 @@ def kill_by_pid(pid):
 
 def kill_by_cmd(cmd):
     #f = open('/var/www/service/usercode/myfile','w')
-    #f.write('cmd:'+cmd) 
-    to_kill = []    
+    #f.write('cmd:'+cmd)
+    to_kill = []
     for line in runProcess(("ps -o pid,cmd ax").split()):
         #f.write(line)
 
@@ -53,24 +54,24 @@ def setlimits(compiler):
         resource.setrlimit(resource.RLIMIT_CPU, (15, 15))
     else:
         resource.setrlimit(resource.RLIMIT_CPU, (5, 5))
-    
+
     resource.setrlimit(resource.RLIMIT_CORE, (0, 0))
     resource.setrlimit(resource.RLIMIT_DATA, (100000000, 100000000))
-    
+
     if compiler[0].startswith("octave") or compiler[0] == "R":
         resource.setrlimit(resource.RLIMIT_FSIZE, (1000000, 1000000))
     else:
         resource.setrlimit(resource.RLIMIT_FSIZE, (0, 0))
-		
-    resource.setrlimit(resource.RLIMIT_MEMLOCK, (0, 0))		
+
+    resource.setrlimit(resource.RLIMIT_MEMLOCK, (0, 0))
     resource.setrlimit(resource.RLIMIT_NOFILE, (30, 30))
     resource.setrlimit(resource.RLIMIT_NPROC, (500, 500))
-    resource.setrlimit(resource.RLIMIT_STACK, (100000000, 100000000))		
-    
+    resource.setrlimit(resource.RLIMIT_STACK, (100000000, 100000000))
+
     if compiler[0].startswith("octave") or compiler[0] == "R" or compiler[0] == "java" or "scala" in compiler[0]:
         resource.setrlimit(resource.RLIMIT_AS, (14000000000, 140000000000))
     else:
-        resource.setrlimit(resource.RLIMIT_AS, (1500000000, 1500000000))		
+        resource.setrlimit(resource.RLIMIT_AS, (1500000000, 1500000000))
 
 os.setpgrp()
 
@@ -88,7 +89,7 @@ else:
 
 delta = 10
 if sys.argv[1].startswith("octave") or sys.argv[1] == "R":
-	delta = 20
+        delta = 20
 fin_time = time.time() + delta
 while p.poll() == None and fin_time > time.time():
     time.sleep(0.1)
@@ -96,13 +97,16 @@ while p.poll() == None and fin_time > time.time():
 if fin_time < time.time():
     if select.select([sys.stdin,],[],[],0.0)[0]:
         sys.stdin.readlines()
-    
-    sys.stderr.write("Process killed, because it ran longer than "+str(delta)+" seconds.")
-    
-    kill_by_cmd(str(cmd))
-    os.killpg(0, signal.SIGKILL)
 
-		
+    sys.stderr.write("Process killed, because it ran longer than "+str(delta)+" seconds.")
+    if len([pid for pid in os.listdir('/proc') if pid.isdigit()]) > 300:
+        os.killpg(0, signal.SIGKILL)
+    else:
+        kill_by_cmd(str(cmd))
+        os.killpg(0, signal.SIGKILL)
+
+
+
 sys.stderr.write('\n')
 usage_stats = resource.getrusage(resource.RUSAGE_CHILDREN)
 sys.stderr.write(str(p.returncode)+' '+str(usage_stats.ru_utime+usage_stats.ru_stime)+' '+str(usage_stats.ru_maxrss))
@@ -111,6 +115,9 @@ sys.stderr.write(str(p.returncode)+' '+str(usage_stats.ru_utime+usage_stats.ru_s
 if select.select([sys.stdin,],[],[],0.0)[0]:
     sys.stdin.readlines()
 
-kill_by_cmd(str(cmd))
-os.killpg(0, signal.SIGKILL)
+if len([pid for pid in os.listdir('/proc') if pid.isdigit()]) > 300:
+    os.killpg(0, signal.SIGKILL)
+else:
+    kill_by_cmd(str(cmd))
+    os.killpg(0, signal.SIGKILL)
 
