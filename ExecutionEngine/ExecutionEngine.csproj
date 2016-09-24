@@ -66,6 +66,7 @@
     <Compile Include="Compiling\DCompile.cs" />
     <Compile Include="Compiling\RCompile.cs" />
     <Compile Include="Compiling\TclCompile.cs" />
+    <Compile Include="Compiling\SwiftCompile.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

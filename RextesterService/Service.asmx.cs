@@ -40,6 +40,15 @@ namespace RextesterService
 			if(inputCompressed)
 				Input = Decompress(Input);
 				
+			if(!string.IsNullOrEmpty(Program) && Program.ToLower().Contains("setsid"))
+			{
+				return new Result()
+				{
+					Errors = "setsid system call is not allowed."
+				};
+			}
+
+
 			Engine engine = new Engine();
 			InputData idata = new InputData()
 			{

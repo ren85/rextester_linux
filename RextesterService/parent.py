@@ -98,7 +98,7 @@ if fin_time < time.time():
     if select.select([sys.stdin,],[],[],0.0)[0]:
         sys.stdin.readlines()
 
-    sys.stderr.write("Process killed, because it ran longer than "+str(delta)+" seconds.")
+    sys.stderr.write("Process killed, because it ran longer than "+str(delta)+" seconds. Is your code waiting for keyboard input which is not supplied?")
     if len([pid for pid in os.listdir('/proc') if pid.isdigit()]) > 300:
         os.killpg(0, signal.SIGKILL)
     else:

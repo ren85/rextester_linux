@@ -61,6 +61,8 @@ namespace ExecutionEngine
 					return new RCompile();
 				case Languages.Tcl:
 					return new TclCompile();
+				case Languages.Swift:
+					return new SwiftCompile();
 				default:
 					return null;
 			}

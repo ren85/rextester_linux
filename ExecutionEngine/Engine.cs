@@ -124,7 +124,8 @@ namespace ExecutionEngine
 		CppClang,
 		D,
 		R,
-		Tcl
+		Tcl,
+		Swift
 	}	
 	
 	public class CompilerData
@@ -501,6 +502,9 @@ namespace ExecutionEngine
 				case Languages.Tcl:
 					ext = ".tcl";
 					break;
+				case Languages.Swift:
+					ext = ".swift";
+					break;	
 				default:
 					ext = ".unknown";
 					break;

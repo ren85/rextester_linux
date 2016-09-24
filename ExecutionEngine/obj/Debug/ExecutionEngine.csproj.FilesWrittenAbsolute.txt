@@ -1,5 +1,0 @@
-/home/ren/Desktop/rextester_linux/ExecutionEngine/obj/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.cs
-/home/ren/Desktop/rextester_linux/ExecutionEngine/bin/Debug/ExecutionEngine.dll.mdb
-/home/ren/Desktop/rextester_linux/ExecutionEngine/bin/Debug/ExecutionEngine.dll
-/home/ren/Desktop/rextester_linux/ExecutionEngine/obj/Debug/ExecutionEngine.dll
-/home/ren/Desktop/rextester_linux/ExecutionEngine/obj/Debug/ExecutionEngine.dll.mdb

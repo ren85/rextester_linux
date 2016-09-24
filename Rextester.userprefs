@@ -1,10 +1,11 @@
-﻿<Properties StartupItem="runPythonWrapper/Test.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Services/YcmdEngine.cs">
+﻿<Properties StartupItem="RextesterService/RextesterService.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" PreferredExecutionTarget="chromium-browser" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="RextesterService/Service.asmx.cs">
     <Files>
       <File FileName="Services/YcmdEngine.cs" Line="43" Column="11" />
-      <File FileName="Services/CodeCompletion.cs" Line="30" Column="33" />
-      <File FileName="RextesterService/Service.asmx.cs" Line="134" Column="30" />
+      <File FileName="Services/CodeCompletion.cs" Line="1" Column="1" />
+      <File FileName="RextesterService/Service.asmx.cs" Line="18" Column="49" />
+      <File FileName="RextesterService/Service.asmx" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -36,7 +36,7 @@ namespace ExecutionEngine
 		
 		public static bool IsCompiled(Languages lang)
 		{
-			if(lang == Languages.C || lang == Languages.CPP || lang == Languages.CClang || lang == Languages.CppClang || lang == Languages.Java || lang == Languages.Pascal || lang == Languages.Haskell || lang == Languages.ObjectiveC || lang == Languages.Nasm || lang == Languages.Go || lang == Languages.Scala || lang == Languages.D)
+			if(lang == Languages.C || lang == Languages.CPP || lang == Languages.CClang || lang == Languages.CppClang || lang == Languages.Java || lang == Languages.Pascal || lang == Languages.Haskell || lang == Languages.ObjectiveC || lang == Languages.Nasm || lang == Languages.Go || lang == Languages.Scala || lang == Languages.D || lang == Languages.Swift)
 				return true;
 			else
 				return false;
