@@ -11,8 +11,8 @@ namespace ExecutionEngine
 		#region ICompiler implementation
 		public CompilerData Compile (InputData idata, CompilerData cdata)
 		{
-			cdata.ExecuteThis = idata.PathToSource;
-			cdata.Executor = "/home/ren/v8-trunk/out/x64.release/d8";
+			cdata.ExecuteThis = "-f " + idata.PathToSource;
+			cdata.Executor = "js24";
 			cdata.Success = true;
 			return cdata;
 		}

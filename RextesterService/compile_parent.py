@@ -9,7 +9,9 @@ import signal
 
 os.setpgrp()
 
-os.environ["HOME"] = "/var/www"
+if sys.argv[1] == "ghc":
+    os.environ["HOME"] = "/var/www"
+
 p = subprocess.Popen(sys.argv[1:])
 
 delta = 30

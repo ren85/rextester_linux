@@ -68,7 +68,7 @@ def setlimits(compiler):
     resource.setrlimit(resource.RLIMIT_NPROC, (500, 500))
     resource.setrlimit(resource.RLIMIT_STACK, (100000000, 100000000))
 
-    if compiler[0].startswith("octave") or compiler[0] == "R" or compiler[0] == "java" or "scala" in compiler[0]:
+    if compiler[0].startswith("erl")  or compiler[0].startswith("elixir") or compiler[0].startswith("octave") or compiler[0] == "R" or compiler[0] == "java" or "scala" in compiler[0]:
         resource.setrlimit(resource.RLIMIT_AS, (14000000000, 140000000000))
     else:
         resource.setrlimit(resource.RLIMIT_AS, (1500000000, 1500000000))
@@ -120,4 +120,3 @@ if len([pid for pid in os.listdir('/proc') if pid.isdigit()]) > 300:
 else:
     kill_by_cmd(str(cmd))
     os.killpg(0, signal.SIGKILL)
-

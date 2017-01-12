@@ -13,7 +13,7 @@ namespace ExecutionEngine
 		#region ICompiler implementation
 		public CompilerData Compile (InputData idata, CompilerData cdata)
 		{
-			string compiler = "g++-4.9";
+			string compiler = "g++";
 			if(string.IsNullOrEmpty(idata.Compiler_args) || !idata.Compiler_args.Contains("-o a.out"))
 			{
 				cdata.Error = "Compiler args must contain '-o a.out'";

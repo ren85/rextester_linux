@@ -13,6 +13,7 @@ namespace ExecutionEngine
 		#region ICompiler implementation
 		public CompilerData Compile (InputData idata, CompilerData cdata)
 		{
+			Directory.SetCurrentDirectory (idata.BaseDir);
 			string compiler = "/home/ren/scala-2.11.7/bin/fsc";
 			string args = "-deprecation -unchecked -encoding UTF-8 -d " + idata.BaseDir +" "+ idata.PathToSource;
 			long compileTime;

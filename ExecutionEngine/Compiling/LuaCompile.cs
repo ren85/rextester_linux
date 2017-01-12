@@ -12,7 +12,7 @@ namespace ExecutionEngine
 		public CompilerData Compile (InputData idata, CompilerData cdata)
 		{
 			cdata.ExecuteThis = idata.PathToSource;
-			cdata.Executor = "lua";
+			cdata.Executor = "lua5.3";
 			cdata.Success = true;
 			return cdata;
 		}

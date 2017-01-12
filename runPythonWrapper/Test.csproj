@@ -37,13 +37,50 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Core" />
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net35\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="Web References\n178_238_226_7\Reference.cs">
+    <Compile Include="ITest.cs" />
+    <Compile Include="Logic.cs" />
+    <Compile Include="Tests\JavascriptHello.cs" />
+    <Compile Include="Tests\JavaHello.cs" />
+    <Compile Include="Tests\JavaTwoClasses.cs" />
+    <Compile Include="Tests\PythonHello.cs" />
+    <Compile Include="Tests\CHello.cs" />
+    <Compile Include="Tests\CClangHello.cs" />
+    <Compile Include="Tests\CPPHello.cs" />
+    <Compile Include="Tests\CPPClangHello.cs" />
+    <Compile Include="Tests\PhpHello.cs" />
+    <Compile Include="Tests\PascalHello.cs" />
+    <Compile Include="Tests\ObjectivecHello.cs" />
+    <Compile Include="Tests\HaskellHello.cs" />
+    <Compile Include="Tests\RubyHello.cs" />
+    <Compile Include="Tests\PerlHello.cs" />
+    <Compile Include="Tests\LuaHello.cs" />
+    <Compile Include="Tests\NasmHello.cs" />
+    <Compile Include="Tests\LispHello.cs" />
+    <Compile Include="Tests\PrologHello.cs" />
+    <Compile Include="Tests\GoHello.cs" />
+    <Compile Include="Tests\ScalaHello.cs" />
+    <Compile Include="Tests\SchemeHello.cs" />
+    <Compile Include="Tests\NodeHello.cs" />
+    <Compile Include="Tests\Python3Hello.cs" />
+    <Compile Include="Tests\OctaveHello.cs" />
+    <Compile Include="Tests\DHello.cs" />
+    <Compile Include="Tests\RHello.cs" />
+    <Compile Include="Tests\TclHello.cs" />
+    <Compile Include="Tests\FHello.cs" />
+    <Compile Include="Tests\SwiftHello.cs" />
+    <Compile Include="Tests\BashHello.cs" />
+    <Compile Include="Tests\RustHello.cs" />
+    <Compile Include="Tests\AdaHello.cs" />
+    <Compile Include="Tests\ErlangHello.cs" />
+    <Compile Include="Tests\ElixirHello.cs" />
+    <Compile Include="Tests\OcamlHello.cs" />
+    <Compile Include="Web References\api.rextester.com\Reference.cs">
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -70,22 +107,25 @@
     <WCFMetadataStorage Include="Service References\www.w3schools.com" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferences Include="Web References" />
-  </ItemGroup>
-  <ItemGroup>
-    <WebReferenceUrl Include="http://178.238.226.7/Service.asmx">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\n178_238_226_7</RelPath>
-      <UpdateFromURL>http://178.238.226.7/Service.asmx</UpdateFromURL>
-    </WebReferenceUrl>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Web References\n178_238_226_7\Service.disco" />
-    <None Include="Web References\n178_238_226_7\Service.wsdl" />
-    <None Include="Web References\n178_238_226_7\Reference.map">
+    <None Include="Tests\TestIdeas.txt" />
+    <None Include="packages.config" />
+    <None Include="Web References\api.rextester.com\Service.wsdl" />
+    <None Include="Web References\api.rextester.com\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Tests\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://83.169.3.96/Service.asmx?wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\api.rextester.com</RelPath>
+      <UpdateFromURL>http://83.169.3.96/Service.asmx?wsdl</UpdateFromURL>
+    </WebReferenceUrl>
   </ItemGroup>
 </Project>

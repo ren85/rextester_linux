@@ -1,24 +1,35 @@
-﻿<Properties StartupItem="RextesterService/RextesterService.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" PreferredExecutionTarget="chromium-browser" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="RextesterService/Service.asmx.cs">
+﻿<Properties StartupItem="runPythonWrapper/Test.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="runPythonWrapper/Tests/TclHello.cs">
     <Files>
-      <File FileName="Services/YcmdEngine.cs" Line="43" Column="11" />
       <File FileName="Services/CodeCompletion.cs" Line="1" Column="1" />
-      <File FileName="RextesterService/Service.asmx.cs" Line="18" Column="49" />
-      <File FileName="RextesterService/Service.asmx" Line="1" Column="1" />
+      <File FileName="Services/YcmdEngine.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Compiling/FSharpCompile.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Compiling/JavaCompile.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Compiling/CPPClangCompile.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Compiling/ScalaCompile.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Compiling/PascalCompile.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Engine.cs" Line="1" Column="1" />
+      <File FileName="runPythonWrapper/Main.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Utils.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Compiling/ICompilerFactory.cs" Line="66" Column="27" />
+      <File FileName="ExecutionEngine/Compiling/SwiftCompile.cs" Line="26" Column="7" />
+      <File FileName="ExecutionEngine/Compiling/NasmCompile.cs" Line="1" Column="1" />
+      <File FileName="ServiceWarmup/Runs/JavaRun.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Compiling/SchemeCompile.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Compiling/AdaCompile.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Compiling/ErlangCompile.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Compiling/ElixirCompile.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Compiling/PerlCompile.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Compiling/OcamlCompile.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Compiling/ClojureCompile.cs" Line="1" Column="1" />
+      <File FileName="runPythonWrapper/Tests/SwiftHello.cs" Line="24" Column="75" />
+      <File FileName="runPythonWrapper/Tests/TclHello.cs" Line="24" Column="75" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/home/ren/Desktop/rextester/linux/runPythonWrapper/Main.cs" line="75" column="1" />
-      <Breakpoint file="/home/ren/Desktop/rextester_linux/runPythonWrapper/Main.cs" line="36" column="114" />
-      <Breakpoint file="/home/ren/Desktop/rextester_linux/runPythonWrapper/Main.cs" line="92" column="1" />
-      <Breakpoint file="/home/ren/Desktop/rextester_linux/ExecutionEngine/Engine.cs" line="204" column="1" />
-      <Breakpoint traceExpression="{error}" file="/home/ren/Desktop/rextester_linux/ExecutionEngine/Engine.cs" line="224" column="1" />
-      <Breakpoint file="/home/ren/Desktop/rextester_linux/ExecutionEngine/Engine.cs" line="625" column="1" />
-      <Breakpoint file="/home/ren/Desktop/rextester_linux/ExecutionEngine/Engine.cs" line="645" column="1" />
-      <Breakpoint file="/home/ren/Desktop/rextester_linux/ExecutionEngine/Engine.cs" line="236" column="1" />
-      <Breakpoint file="/home/ren/Desktop/rextester_linux/ExecutionEngine/Engine.cs" line="234" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

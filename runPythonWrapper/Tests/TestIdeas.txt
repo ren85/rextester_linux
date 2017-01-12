@@ -1,0 +1,826 @@
+﻿				#region JAVA
+				
+				
+
+
+
+				list.Add(new TestProgram()
+				         {
+							Name = "Java_Loop_",
+							Program = @"
+import java.util.*;
+import java.lang.*;
+
+class Rextester
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{		
+		while(1==1)
+			;
+	}
+}",							
+						});
+									list.Add(new TestProgram()
+				         {
+							Name = "Java_LoopPrint",
+							Program = @"
+import java.util.*;
+import java.lang.*;
+
+class Rextester
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{		
+		while(1==1)
+			System.out.println(""Hello from Java "");
+	}
+}",
+							Lang = Languages.Java
+						 });
+				list.Add(new TestProgram()
+				         {
+							Name = "Java_Memory",
+							Program = @"
+import java.util.*;
+import java.lang.*;
+
+class Rextester
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		ArrayList<String> list = new ArrayList<String>();
+		while(true)
+		{
+			list.add(""text"");
+		}
+	}
+}",
+							Lang = Languages.Java
+						 });
+list.Add(new TestProgram()
+				         {
+							Name = "Java_Divide",
+							Program = @"
+import java.util.*;
+import java.lang.*;
+
+class Rextester
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		int a = 0;
+		System.out.println(5/a);
+	}
+}",
+					Lang = Languages.Java
+						 });
+list.Add(new TestProgram()
+				         {
+							Name = "Java_Threads",
+							Program = @"
+class Rextester extends Thread {
+
+    public void run() {
+		(new Rextester()).start();
+    }
+
+    public static void main(String args[]) {
+        (new Rextester()).start();
+    }
+
+}",
+					
+							Lang = Languages.Java
+						 });
+				list.Add(new TestProgram()
+				         {
+							Name = "Java_Warning",
+							Program = @"
+class Rextester{
+	public static void main(String args[]) {
+    	java.util.Date d = new java.util.Date();
+		system.out.println(d.getDate());
+    }
+}",
+					
+							Lang = Languages.Java
+						 });
+				
+				list.Add(new TestProgram()
+				         {
+							Name = "Java_Time",
+							Program = @"
+import java.util.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
+class Rextester
+{
+    public static void main(String args[]) 
+    {
+    	DateFormat dateFormat = new SimpleDateFormat(""yyyy/MM/dd HH:mm:ss S"");
+	    Date date = new Date();
+	    System.out.println(dateFormat.format(date));
+    }
+}
+",
+					
+							Lang = Languages.Java
+						 });
+				list.Add(new TestProgram()
+				         {
+							Name = "Java_Bad",
+							Program = @"
+
+class Rextester
+{
+    public static void main(String args[]) 
+    {
+}
+",
+					
+							Lang = Languages.Java
+						 });	
+				list.Add(new TestProgram()
+				         {
+							Name = "Java_ControlAscii",
+							Program = @"
+
+class Rextester
+{
+    public static void main(String args[]) 
+    {
+		System.out.println(""���������"");
+	}
+}
+",
+					
+							Lang = Languages.Java
+						 });
+			
+				
+#endregion
+
+
+
+
+
+
+
+#region python
+
+				list.Add(new TestProgram()
+				       {
+							Program=@"
+import sys
+sys.setdefaultencoding('utf-8')
+print sys.stdout.encoding
+print ""ėšįūėęųšįūęųė""
+",
+							Lang = Languages.Python,
+							Name = "Python_Hello",
+							Input = "ęįš",
+						});
+					list.Add(new TestProgram()
+				       {
+							Program=@"
+
+a = 1000000
+print a
+while a>0:
+	a=a-1
+h = input()
+",
+							Lang = Languages.Python,
+							Name = "Python_Blocked",
+						});
+				
+				
+				list.Add(new TestProgram()
+				       {
+							Program=@"
+while 1==1:
+	a = 5",
+						Lang = Languages.Python,
+							Name = "Python_Loop_"
+						});
+				
+								
+				list.Add(new TestProgram()
+				       {
+							Program=@"
+while 1==1:
+	print ""Hello world""",
+						Lang = Languages.Python,
+							Name = "Python_LoopPrint"
+						});
+				
+				list.Add(new TestProgram()
+				       {
+							Program=@"
+a = 0
+b =5/a",
+							Lang = Languages.Python,
+							Name = "Python_Divide"
+						});
+				
+				
+												list.Add(new TestProgram()
+				       {
+							Program=@"
+a = []
+while 1==1:
+	a.append('text')
+",
+							Lang = Languages.Python,
+							Name = "Python_Memory"
+						});
+				
+				list.Add(new TestProgram()
+				       {
+							Program=@"
+import resource
+resource.setrlimit(resource.RLIMIT_CPU, (10, 10))
+",
+							Lang = Languages.Python,
+							Name = "Python_Limit"
+						});
+				list.Add(new TestProgram()
+				       {
+							Program=@"
+				
+#import getpass
+#print getpass.getuser()
+from subprocess import call
+call([""rm"", ""/home/ren/Desktop/example.txt""])
+",
+							Lang = Languages.Python,
+							Name = "Python_RemoveFile"
+						});
+					list.Add(new TestProgram()
+				       {
+							Program=@"
+				
+f = open('/tmp/sometest', 'w')
+print f
+f.write('')
+",
+							Lang = Languages.Python,
+							Name = "Python_CreateFile"
+						});
+					list.Add(new TestProgram()
+				       {
+							Program=@"
+from subprocess import call
+call([""mkdir"", ""/tmp/wow""])
+",
+							Lang = Languages.Python,
+							Name = "Python_MakeDirectory"
+						});
+				
+			list.Add(new TestProgram()
+				       {
+							Program=@"
+import random
+#while 1==1:
+f = open('/tmp/sometest'+str(random.randint(1,1000000)), 'w')
+f.write('')
+f.close()
+",
+							Lang = Languages.Python,
+							Name = "Python_WriteFiles"
+						});
+					list.Add(new TestProgram()
+				       {
+							Program=@"
+from subprocess import call
+call([""ln"", ""-s"", ""/home/ren/Desktop/ho.txt"", ""/tmp/test1000""])
+",
+							Lang = Languages.Python,
+							Name = "Python_Link"
+						});
+				list.Add(new TestProgram()
+				       {
+							Program=@"
+from subprocess import call
+call([""chmod"", ""a+w"", ""/home/ren/Desktop/example.txt""])
+",
+							Lang = Languages.Python,
+							Name = "Python_Chmod"
+						});
+				
+								list.Add(new TestProgram()
+				       {
+							Program=@"
+while 1==1:
+	from subprocess import call
+	call([""java"", ""FileWrite""])
+",
+							Lang = Languages.Python,
+							Name = "Python_CallJavaInLoop"
+						});
+				
+							list.Add(new TestProgram()
+				       {
+							Program=@"
+import warnings
+warnings.warn('This is a warning message')
+print 5
+",
+							Lang = Languages.Python,
+							Name = "Python_Warning"
+						});
+				
+				
+					list.Add(new TestProgram()
+				       {
+							Program=@"
+from subprocess import call
+call([""chmod"", ""000"", ""/""])
+",
+							Lang = Languages.Python,
+							Name = "Python_Evil1"
+						});
+				
+					list.Add(new TestProgram()
+				       {
+							Program=@"
+from subprocess import call
+call([""sudo"", ""passwd"", ""root""])
+",
+							Lang = Languages.Python,
+							Name = "Python_Evil2"
+						});
+
+					list.Add(new TestProgram()
+				       {
+							Program=@"
+from subprocess import call
+call([""rm"", ""-rf"", "".*""])
+",
+							Lang = Languages.Python,
+							Name = "Python_Evil3"
+						});
+					list.Add(new TestProgram()
+				       {
+							Program=@"
+import os
+f=os.popen(""bomb(){ bomb|bomb& };bomb"")
+",
+							Lang = Languages.Python,
+							Name = "Python_Evil4"
+						});
+
+					
+					list.Add(new TestProgram()
+				       {
+							Program=@"
+import os
+#os.setpgrp()
+while 1==1:
+    os.system(""xsp &"")
+",
+							Lang = Languages.Python,
+							Name = "Python_Evil5"
+						});
+				
+				
+					list.Add(new TestProgram()
+				       {
+							Program=@"
+import time
+from subprocess import call
+call([""xsp""])
+time.sleep(10)
+",
+							Lang = Languages.Python,
+							Name = "Python_Daemon"
+						});
+				list.Add(new TestProgram()
+				       {
+							Program=@"
+import datetime
+
+print 'python self - ' + str(datetime.datetime.now())
+",
+							Lang = Languages.Python,
+							Name = "Python_Time"
+						});
+#endregion
+
+
+
+
+
+
+
+#region C and C++
+				list.Add(new TestProgram()
+				       {
+							Program=@"
+#include  <stdio.h>
+#include  <sys/types.h>
+
+void  main(void)
+{
+
+     pid_t  pid;
+
+     pid = fork();
+     if (pid == 0) 
+	 {
+		while(1==1)
+			fork();
+	 }	
+     else 
+     {
+		while(1==1)
+			fork();
+ 	 }
+}
+",
+							Lang = Languages.C,
+							Name = "C_Fork"
+						});
+								list.Add(new TestProgram()
+				       {
+							Program=@"
+#include  <stdio.h>
+#include  <sys/types.h>
+
+int  main(void)
+{
+
+     for(int i=0; i<8; i++)
+		printf(""Hi!"");
+}
+",
+							Lang = Languages.C,
+							Name = "C_Hello",
+							Args = "-Wall -std=gnu99 -O2 -o a.out source_file.c"
+						});
+						list.Add(new TestProgram()
+				       {
+							Program=@"
+#include <sys/resource.h>
+
+int which = PRIO_PROCESS;
+int pid;
+int priority = -20;
+int ret;
+
+void  main(void)
+{
+	pid = getpid();
+	ret = setpriority(which, pid, priority);
+	printf(""pid %d ret %d\n"", pid, ret);
+	
+}
+",
+							Lang = Languages.C,
+							Name = "C_Nice"
+						});	
+				
+				list.Add(new TestProgram()
+				       {
+							Program=@"
+#include  <stdio.h>
+int main()
+{
+    float f ;
+    
+    printf (""grade ?"");
+    scanf (""%f"", & f);
+
+
+    
+        
+if( f < 4.0 );
+   printf (""You had a %d.\nYou deserve $0"", f);   
+  
+elif(f < 5.0);
+     printf (""You had a %d.\nYou deserve $10"", f);
+elif(f < 7.0 );
+         printf (""You had a %d.\nYou deserve $100"", f);
+elif( f == 7.0 );
+            printf (""You had a %d.\n You deserve $500"", f);
+                   
+    return 0;
+
+}
+",
+							Lang = Languages.C,
+							Name = "C_NoErrorWords"
+						});	
+
+				
+				list.Add(new TestProgram()
+				       {
+							Program=@"
+#include <iostream>
+using namespace std;
+
+enum class Enumeration {
+    Val1,
+    Val2,
+    Val3 = 100,
+    Val4 // = 101
+};
+
+int main ()
+{
+
+
+	for(int i=0; i<5; i++)
+		cout << ""Hi"";
+}",
+							Lang = Languages.CPP,
+							Name = "CPP_Hello",
+							Args =" -Wall -std=c++11 -O2 -o a.out source_file.cpp"
+						});
+				
+				
+				list.Add(new TestProgram()
+				       {
+							Program=@"
+#include  <stdio.h>
+
+int main(void)
+{
+	for(int i=0; i<5; i++)
+		cout << ""Hi"";
+}",
+						
+							Lang = Languages.C,
+							Name = "C_Divide"
+						});
+				
+				list.Add(new TestProgram()
+				       {
+							Program=@"
+#include  <stdio.h>
+
+int main(void)
+{
+     while(1==1)
+		;
+}",
+							Lang = Languages.C,
+							Name = "C_Loop"
+						});
+				
+				list.Add(new TestProgram()
+				       {
+							Program=@"
+#include  <stdio.h>
+
+int main(void)
+{
+     while(1==1)
+		printf(""text\n"");
+}",
+							Lang = Languages.C,
+							Name = "C_LoopPrint"
+						});
+				
+				list.Add(new TestProgram()
+				       {
+							Program=@"
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main () {
+  ofstream myfile;
+  myfile.open (""/home/ren/Desktop/example.txt"");
+if (myfile.is_open())
+{
+  myfile << ""Writing this to a file.\n"";
+  myfile.close();
+}
+else
+{
+	cout << ""Couldn't open file."";
+}
+  return 0;
+}
+",
+							Lang = Languages.CPP,
+							Name = "CPP_WriteFile"
+						});
+				
+				
+				list.Add(new TestProgram()
+				         {
+							Name = "C_Memory",
+							Program = @"
+#include  <stdio.h>
+
+int main(void)
+{
+	int a = 100000000;	
+	int *ptr = (int *) malloc(a * sizeof (int));
+	if (ptr == NULL) 
+	{
+	   printf(""Memory could not be allocated!\n"");
+	} 
+	else
+	{
+		printf(""Allocated successfuly!\n"");
+		int counter = 0;
+		*ptr = counter;
+		printf(""%d: %d: %d sizeof int: %d\n\n"",&ptr, ptr, *ptr, sizeof (int));
+		
+		while(--a>0)
+		{	
+			ptr++;    
+			*ptr=++counter;
+			printf(""%d %d\n"", ptr, *ptr);
+		}
+	}
+}
+",
+							Lang = Languages.C
+						 });
+				
+				list.Add(new TestProgram()
+				       {
+							Program=@"
+#include  <stdio.h>
+
+int main(void)
+{
+	int a=0;
+	int b = 5
+}",
+							Lang = Languages.C,
+							Name = "C_Warning"
+						});
+				
+								list.Add(new TestProgram()
+				       {
+							Program=@"
+#include <iostream>
+using namespace std;
+
+int main ()
+{
+  cout << ""Hello from C++!\n"";
+	int a = 0;
+	int b = 5;
+  return 0;
+}",
+							Lang = Languages.CPP,
+							Name = "CPP_Warning"
+						});
+					list.Add(new TestProgram()
+				       {
+							Program=@"
+/* C demo code */
+
+#include <zmq.h>
+#include <pthread.h>
+#include <semaphore.h>
+#include <time.h>
+#include <stdio.h>
+#include <fcntl.h>
+#include <malloc.h>
+
+typedef struct {
+  void* arg_socket;
+  zmq_msg_t* arg_msg;
+  char* arg_string;
+  unsigned long arg_len;
+  int arg_int, arg_command;
+
+  int signal_fd;
+  int pad;
+  void* context;
+  sem_t sem;
+} acl_zmq_context;
+
+#define p(X) (context->arg_##X)
+
+void* zmq_thread(void* context_pointer) {
+  acl_zmq_context* context = (acl_zmq_context*)context_pointer;
+  char ok = 'K', err = 'X';
+  int res;
+
+  while (1) {
+    while ((res = sem_wait(&context->sem)) == EINTR);
+    if (res) {write(context->signal_fd, &err, 1); goto cleanup;}
+    switch(p(command)) {
+    case 0: goto cleanup;
+    case 1: p(socket) = zmq_socket(context->context, p(int)); break;
+    case 2: p(int) = zmq_close(p(socket)); break;
+    case 3: p(int) = zmq_bind(p(socket), p(string)); break;
+    case 4: p(int) = zmq_connect(p(socket), p(string)); break;
+    case 5: p(int) = zmq_getsockopt(p(socket), p(int), (void*)p(string), &p(len)); break;
+    case 6: p(int) = zmq_setsockopt(p(socket), p(int), (void*)p(string), p(len)); break;
+    case 7: p(int) = zmq_send(p(socket), p(msg), p(int)); break;
+    case 8: p(int) = zmq_recv(p(socket), p(msg), p(int)); break;
+    case 9: p(int) = zmq_poll(p(socket), p(int), p(len)); break;
+    }
+    p(command) = errno;
+    write(context->signal_fd, &ok, 1);
+  }
+ cleanup:
+  close(context->signal_fd);
+  free(context_pointer);
+  return 0;
+}
+
+void* zmq_thread_init(void* zmq_context, int signal_fd) {
+  acl_zmq_context* context = malloc(sizeof(acl_zmq_context));
+  pthread_t thread;
+
+  context->context = zmq_context;
+  context->signal_fd = signal_fd;
+  sem_init(&context->sem, 1, 0);
+  pthread_create(&thread, 0, &zmq_thread, context);
+  pthread_detach(thread);
+  return context;
+}
+",
+							Lang = Languages.CPP,
+							Name = "CPP_Wierd"
+						});
+
+
+
+						list.Add(new TestProgram()
+				       {
+							Program=@"
+#include <iostream>
+using namespace std;
+
+enum class Enumeration {
+    Val1,
+    Val2,
+    Val3 = 100,
+    Val4 // = 101
+};
+
+int main ()
+{
+
+
+	for(int i=0; i<5; i++)
+		cout << ""Hi"";
+}",
+							Lang = Languages.CppClang,
+							Name = "CPPCLANG_Hello",
+							Args = "-Wall -std=c++11 -O2 -o a.out source_file.cpp"
+						});
+				list.Add(new TestProgram()
+				       {
+							Program=@"
+#include  <stdio.h>
+#include  <sys/types.h>
+
+int  main(void)
+{
+
+     for(int i=0; i<8; i++)
+		printf(""Hi!"");
+}
+",
+							Lang = Languages.C,
+							Name = "CClang_Hello",
+							Args = "-Wall -std=gnu99 -O2 -o a.out source_file.c"
+						});
+
+												list.Add(new TestProgram()
+				       {
+							Program=
+@"#include <iostream>
+#include <string>
+#include <vector>
+
+template<int N>
+inline int foo(int x)
+{
+    if (x == 0)
+        return N;
+    if (x & 1)
+        return foo<(N << 1) + 1>(x >> 1);
+    else
+        return foo<N << 1>(x >> 1);
+}
+
+int main()
+{
+    std::cout << foo<1>(10);
+}",
+							Lang = Languages.CPP,
+							Name = "CPP_BAD_COMPILE",
+							Args = "-Wall -std=c++11 -O2 -o a.out source_file.cpp"
+						});
+
+				
+#endregion
+
+
+
+

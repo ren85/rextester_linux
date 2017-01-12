@@ -12,6 +12,7 @@ namespace ExecutionEngine
 
 		public CompilerData Compile (InputData idata, CompilerData cdata)
 		{
+			Directory.SetCurrentDirectory (idata.BaseDir);
 			List<string> dropLines = new List<string>();
 			dropLines.Add("sh: /bin/rm: Permission denied");
 

@@ -13,11 +13,12 @@ namespace ExecutionEngine
 		#region ICompiler implementation
 		public CompilerData Compile (InputData idata, CompilerData cdata)
 		{
+			Directory.SetCurrentDirectory (idata.BaseDir);
 			List<string> dropLines = new List<string>();
 			dropLines.Add("Compiling");
 			dropLines.Add("Linking");
 			
-			string compiler = "/opt/ghc/8.0.1/bin/ghc";
+			string compiler = "ghc";
 
 			if(string.IsNullOrEmpty(idata.Compiler_args) || !idata.Compiler_args.Contains("-o a.out"))
 			{

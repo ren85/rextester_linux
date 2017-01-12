@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://rextester.com/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://rextester.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://rextester.com/">
+      <s:element name="DoWork">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Program" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Input" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Language" type="tns:Languages" />
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="compiler_args" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bytes" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="programCompressed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="inputCompressed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="Languages">
+        <s:restriction base="s:string">
+          <s:enumeration value="Java" />
+          <s:enumeration value="Python" />
+          <s:enumeration value="C" />
+          <s:enumeration value="CPP" />
+          <s:enumeration value="Php" />
+          <s:enumeration value="Pascal" />
+          <s:enumeration value="ObjectiveC" />
+          <s:enumeration value="Haskell" />
+          <s:enumeration value="Ruby" />
+          <s:enumeration value="Perl" />
+          <s:enumeration value="Lua" />
+          <s:enumeration value="Nasm" />
+          <s:enumeration value="Javascript" />
+          <s:enumeration value="Lisp" />
+          <s:enumeration value="Prolog" />
+          <s:enumeration value="Go" />
+          <s:enumeration value="Scala" />
+          <s:enumeration value="Scheme" />
+          <s:enumeration value="Nodejs" />
+          <s:enumeration value="Python3" />
+          <s:enumeration value="Octave" />
+          <s:enumeration value="CClang" />
+          <s:enumeration value="CppClang" />
+          <s:enumeration value="D" />
+          <s:enumeration value="R" />
+          <s:enumeration value="Tcl" />
+          <s:enumeration value="Swift" />
+          <s:enumeration value="FSharp" />
+          <s:enumeration value="Bash" />
+          <s:enumeration value="Rust" />
+          <s:enumeration value="Ada" />
+          <s:enumeration value="Erlang" />
+          <s:enumeration value="Elixir" />
+          <s:enumeration value="Ocaml" />
+          <s:enumeration value="Clojure" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="DoWorkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DoWorkResult" type="tns:Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Errors_Bytes" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="Warnings" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Warnings_Bytes" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="Output" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsOutputCompressed" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Output_Bytes" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="Stats" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Exit_Status" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Exit_Code" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="System_Error" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Files" type="tns:ArrayOfBase64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfBase64Binary">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="base64Binary" nillable="true" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Sum">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="a" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="b" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SumResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Diff">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="left" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="right" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DiffResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DiffResult" type="tns:DiffResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DiffResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsError" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Result" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPythonDotCompletions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="source" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="line" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="column" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPythonDotCompletionsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPythonParenCompletions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="source" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="line" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="column" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPythonParenCompletionsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCPPCompletions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="source" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="line" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="column" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCPPCompletionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCPPCompletionsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Result" nillable="true" type="tns:Result" />
+      <s:element name="int" type="s:int" />
+      <s:element name="DiffResult" nillable="true" type="tns:DiffResult" />
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="DoWorkSoapIn">
+    <wsdl:part name="parameters" element="tns:DoWork" />
+  </wsdl:message>
+  <wsdl:message name="DoWorkSoapOut">
+    <wsdl:part name="parameters" element="tns:DoWorkResponse" />
+  </wsdl:message>
+  <wsdl:message name="SumSoapIn">
+    <wsdl:part name="parameters" element="tns:Sum" />
+  </wsdl:message>
+  <wsdl:message name="SumSoapOut">
+    <wsdl:part name="parameters" element="tns:SumResponse" />
+  </wsdl:message>
+  <wsdl:message name="DiffSoapIn">
+    <wsdl:part name="parameters" element="tns:Diff" />
+  </wsdl:message>
+  <wsdl:message name="DiffSoapOut">
+    <wsdl:part name="parameters" element="tns:DiffResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPythonDotCompletionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPythonDotCompletions" />
+  </wsdl:message>
+  <wsdl:message name="GetPythonDotCompletionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPythonDotCompletionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPythonParenCompletionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPythonParenCompletions" />
+  </wsdl:message>
+  <wsdl:message name="GetPythonParenCompletionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPythonParenCompletionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCPPCompletionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCPPCompletions" />
+  </wsdl:message>
+  <wsdl:message name="GetCPPCompletionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCPPCompletionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DoWorkHttpGetIn">
+    <wsdl:part name="Program" type="s:string" />
+    <wsdl:part name="Input" type="s:string" />
+    <wsdl:part name="Language" type="s:string" />
+    <wsdl:part name="user" type="s:string" />
+    <wsdl:part name="pass" type="s:string" />
+    <wsdl:part name="compiler_args" type="s:string" />
+    <wsdl:part name="bytes" type="s:string" />
+    <wsdl:part name="programCompressed" type="s:string" />
+    <wsdl:part name="inputCompressed" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DoWorkHttpGetOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="SumHttpGetIn">
+    <wsdl:part name="a" type="s:string" />
+    <wsdl:part name="b" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SumHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="DiffHttpGetIn">
+    <wsdl:part name="left" type="s:string" />
+    <wsdl:part name="right" type="s:string" />
+    <wsdl:part name="user" type="s:string" />
+    <wsdl:part name="pass" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DiffHttpGetOut">
+    <wsdl:part name="Body" element="tns:DiffResult" />
+  </wsdl:message>
+  <wsdl:message name="GetPythonDotCompletionsHttpGetIn">
+    <wsdl:part name="source" type="s:string" />
+    <wsdl:part name="line" type="s:string" />
+    <wsdl:part name="column" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPythonDotCompletionsHttpGetOut" />
+  <wsdl:message name="GetPythonParenCompletionsHttpGetIn">
+    <wsdl:part name="source" type="s:string" />
+    <wsdl:part name="line" type="s:string" />
+    <wsdl:part name="column" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPythonParenCompletionsHttpGetOut" />
+  <wsdl:message name="GetCPPCompletionsHttpGetIn">
+    <wsdl:part name="source" type="s:string" />
+    <wsdl:part name="line" type="s:string" />
+    <wsdl:part name="column" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCPPCompletionsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DoWorkHttpPostIn">
+    <wsdl:part name="Program" type="s:string" />
+    <wsdl:part name="Input" type="s:string" />
+    <wsdl:part name="Language" type="s:string" />
+    <wsdl:part name="user" type="s:string" />
+    <wsdl:part name="pass" type="s:string" />
+    <wsdl:part name="compiler_args" type="s:string" />
+    <wsdl:part name="bytes" type="s:string" />
+    <wsdl:part name="programCompressed" type="s:string" />
+    <wsdl:part name="inputCompressed" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DoWorkHttpPostOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="SumHttpPostIn">
+    <wsdl:part name="a" type="s:string" />
+    <wsdl:part name="b" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SumHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="DiffHttpPostIn">
+    <wsdl:part name="left" type="s:string" />
+    <wsdl:part name="right" type="s:string" />
+    <wsdl:part name="user" type="s:string" />
+    <wsdl:part name="pass" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DiffHttpPostOut">
+    <wsdl:part name="Body" element="tns:DiffResult" />
+  </wsdl:message>
+  <wsdl:message name="GetPythonDotCompletionsHttpPostIn">
+    <wsdl:part name="source" type="s:string" />
+    <wsdl:part name="line" type="s:string" />
+    <wsdl:part name="column" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPythonDotCompletionsHttpPostOut" />
+  <wsdl:message name="GetPythonParenCompletionsHttpPostIn">
+    <wsdl:part name="source" type="s:string" />
+    <wsdl:part name="line" type="s:string" />
+    <wsdl:part name="column" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPythonParenCompletionsHttpPostOut" />
+  <wsdl:message name="GetCPPCompletionsHttpPostIn">
+    <wsdl:part name="source" type="s:string" />
+    <wsdl:part name="line" type="s:string" />
+    <wsdl:part name="column" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCPPCompletionsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="DoWork">
+      <wsdl:input message="tns:DoWorkSoapIn" />
+      <wsdl:output message="tns:DoWorkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Sum">
+      <wsdl:input message="tns:SumSoapIn" />
+      <wsdl:output message="tns:SumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Diff">
+      <wsdl:input message="tns:DiffSoapIn" />
+      <wsdl:output message="tns:DiffSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPythonDotCompletions">
+      <wsdl:input message="tns:GetPythonDotCompletionsSoapIn" />
+      <wsdl:output message="tns:GetPythonDotCompletionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPythonParenCompletions">
+      <wsdl:input message="tns:GetPythonParenCompletionsSoapIn" />
+      <wsdl:output message="tns:GetPythonParenCompletionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCPPCompletions">
+      <wsdl:input message="tns:GetCPPCompletionsSoapIn" />
+      <wsdl:output message="tns:GetCPPCompletionsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ServiceHttpGet">
+    <wsdl:operation name="DoWork">
+      <wsdl:input message="tns:DoWorkHttpGetIn" />
+      <wsdl:output message="tns:DoWorkHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Sum">
+      <wsdl:input message="tns:SumHttpGetIn" />
+      <wsdl:output message="tns:SumHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Diff">
+      <wsdl:input message="tns:DiffHttpGetIn" />
+      <wsdl:output message="tns:DiffHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPythonDotCompletions">
+      <wsdl:input message="tns:GetPythonDotCompletionsHttpGetIn" />
+      <wsdl:output message="tns:GetPythonDotCompletionsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPythonParenCompletions">
+      <wsdl:input message="tns:GetPythonParenCompletionsHttpGetIn" />
+      <wsdl:output message="tns:GetPythonParenCompletionsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCPPCompletions">
+      <wsdl:input message="tns:GetCPPCompletionsHttpGetIn" />
+      <wsdl:output message="tns:GetCPPCompletionsHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ServiceHttpPost">
+    <wsdl:operation name="DoWork">
+      <wsdl:input message="tns:DoWorkHttpPostIn" />
+      <wsdl:output message="tns:DoWorkHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Sum">
+      <wsdl:input message="tns:SumHttpPostIn" />
+      <wsdl:output message="tns:SumHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Diff">
+      <wsdl:input message="tns:DiffHttpPostIn" />
+      <wsdl:output message="tns:DiffHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPythonDotCompletions">
+      <wsdl:input message="tns:GetPythonDotCompletionsHttpPostIn" />
+      <wsdl:output message="tns:GetPythonDotCompletionsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPythonParenCompletions">
+      <wsdl:input message="tns:GetPythonParenCompletionsHttpPostIn" />
+      <wsdl:output message="tns:GetPythonParenCompletionsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCPPCompletions">
+      <wsdl:input message="tns:GetCPPCompletionsHttpPostIn" />
+      <wsdl:output message="tns:GetCPPCompletionsHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DoWork">
+      <soap:operation soapAction="http://rextester.com/DoWork" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sum">
+      <soap:operation soapAction="http://rextester.com/Sum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Diff">
+      <soap:operation soapAction="http://rextester.com/Diff" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPythonDotCompletions">
+      <soap:operation soapAction="http://rextester.com/GetPythonDotCompletions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPythonParenCompletions">
+      <soap:operation soapAction="http://rextester.com/GetPythonParenCompletions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCPPCompletions">
+      <soap:operation soapAction="http://rextester.com/GetCPPCompletions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DoWork">
+      <soap12:operation soapAction="http://rextester.com/DoWork" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sum">
+      <soap12:operation soapAction="http://rextester.com/Sum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Diff">
+      <soap12:operation soapAction="http://rextester.com/Diff" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPythonDotCompletions">
+      <soap12:operation soapAction="http://rextester.com/GetPythonDotCompletions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPythonParenCompletions">
+      <soap12:operation soapAction="http://rextester.com/GetPythonParenCompletions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCPPCompletions">
+      <soap12:operation soapAction="http://rextester.com/GetCPPCompletions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceHttpGet" type="tns:ServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="DoWork">
+      <http:operation location="/DoWork" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sum">
+      <http:operation location="/Sum" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Diff">
+      <http:operation location="/Diff" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPythonDotCompletions">
+      <http:operation location="/GetPythonDotCompletions" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetPythonParenCompletions">
+      <http:operation location="/GetPythonParenCompletions" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetCPPCompletions">
+      <http:operation location="/GetCPPCompletions" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceHttpPost" type="tns:ServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="DoWork">
+      <http:operation location="/DoWork" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sum">
+      <http:operation location="/Sum" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Diff">
+      <http:operation location="/Diff" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPythonDotCompletions">
+      <http:operation location="/GetPythonDotCompletions" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetPythonParenCompletions">
+      <http:operation location="/GetPythonParenCompletions" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetCPPCompletions">
+      <http:operation location="/GetCPPCompletions" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://83.169.3.96/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://83.169.3.96/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceHttpGet" binding="tns:ServiceHttpGet">
+      <http:address location="http://83.169.3.96/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceHttpPost" binding="tns:ServiceHttpPost">
+      <http:address location="http://83.169.3.96/Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

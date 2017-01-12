@@ -63,6 +63,22 @@ namespace ExecutionEngine
 					return new TclCompile();
 				case Languages.Swift:
 					return new SwiftCompile();
+				case Languages.FSharp:
+					return new FSharpCompile();
+				case Languages.Bash:
+					return new BashCompile();
+				case Languages.Rust:
+					return new RustCompile();
+				case Languages.Ada:
+					return new AdaCompile();
+				case Languages.Erlang:
+					return new ErlangCompile();
+				case Languages.Elixir:
+					return new ElixirCompile();
+				case Languages.Ocaml:
+					return new OcamlCompile();
+				case Languages.Clojure:
+					return new ClojureCompile();
 				default:
 					return null;
 			}

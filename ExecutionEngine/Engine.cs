@@ -125,7 +125,15 @@ namespace ExecutionEngine
 		D,
 		R,
 		Tcl,
-		Swift
+		Swift,
+		FSharp,
+		Bash,
+		Rust,
+		Ada,
+		Erlang,
+		Elixir,
+		Ocaml,
+		Clojure
 	}	
 	
 	public class CompilerData
@@ -504,7 +512,31 @@ namespace ExecutionEngine
 					break;
 				case Languages.Swift:
 					ext = ".swift";
-					break;	
+					break;
+				case Languages.FSharp:
+					ext = ".fs";
+					break;
+				case Languages.Bash:
+					ext = ".sh";
+					break;
+				case Languages.Rust:
+					ext = ".rs";
+					break;
+				case Languages.Ada:
+					ext = ".adb";
+					break;
+				case Languages.Erlang:
+					ext = ".erl";
+					break;
+				case Languages.Elixir:
+					ext = ".exs";
+					break;
+				case Languages.Ocaml:
+					ext = ".ml";
+					break;
+				case Languages.Clojure:
+					ext = ".clj";
+					break;
 				default:
 					ext = ".unknown";
 					break;

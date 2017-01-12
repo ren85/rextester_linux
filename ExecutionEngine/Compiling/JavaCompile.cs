@@ -12,6 +12,7 @@ namespace ExecutionEngine
 		#region ICompiler implementation
 		public CompilerData Compile (InputData idata, CompilerData cdata)
 		{
+			Directory.SetCurrentDirectory (idata.BaseDir);
 			string compiler = "javac";
 			string args = " -Xlint -encoding UTF-8 " + idata.PathToSource;
 			long compileTime;

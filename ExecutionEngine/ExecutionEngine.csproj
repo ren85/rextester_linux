@@ -67,6 +67,14 @@
     <Compile Include="Compiling\RCompile.cs" />
     <Compile Include="Compiling\TclCompile.cs" />
     <Compile Include="Compiling\SwiftCompile.cs" />
+    <Compile Include="Compiling\FSharpCompile.cs" />
+    <Compile Include="Compiling\BashCompile.cs" />
+    <Compile Include="Compiling\RustCompile.cs" />
+    <Compile Include="Compiling\AdaCompile.cs" />
+    <Compile Include="Compiling\ErlangCompile.cs" />
+    <Compile Include="Compiling\ElixirCompile.cs" />
+    <Compile Include="Compiling\OcamlCompile.cs" />
+    <Compile Include="Compiling\ClojureCompile.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
