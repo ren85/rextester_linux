@@ -15,6 +15,7 @@ namespace ExecutionEngine
 			Directory.SetCurrentDirectory (idata.BaseDir);
 			List<string> dropLines = new List<string>();
 			dropLines.Add("sh: /bin/rm: Permission denied");
+			dropLines.Add("sh: 1: rm: Permission denied");
 
 			cdata.ExecuteThis = " --slave --vanilla -f " + idata.PathToSource;
 			cdata.Executor = "R";

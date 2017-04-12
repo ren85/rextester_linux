@@ -350,7 +350,7 @@ namespace ExecutionEngine
 					}
 					if(idata.Lang == Languages.R)
 					{
-						string bad_err = "sh: /bin/rm: Permission denied";
+						string bad_err = "sh: 1: rm: Permission denied";
 						if(odata.Errors != null && odata.Errors.Contains(bad_err))
 						{
 							odata.Errors = odata.Errors.Replace(bad_err, "");

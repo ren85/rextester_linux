@@ -76,6 +76,8 @@ def setlimits(compiler):
 os.setpgrp()
 
 os.environ["HOME"] = "/var/www"
+if not sys.argv[1].startswith("erl"):
+    os.chdir("/var/www/service/usercode")
 
 p = subprocess.Popen(sys.argv[1:], preexec_fn=setlimits(sys.argv[1:]))
 

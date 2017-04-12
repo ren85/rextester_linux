@@ -1,30 +1,11 @@
 ﻿<Properties StartupItem="runPythonWrapper/Test.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="runPythonWrapper/Tests/TclHello.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="RextesterService/web.config">
     <Files>
-      <File FileName="Services/CodeCompletion.cs" Line="1" Column="1" />
-      <File FileName="Services/YcmdEngine.cs" Line="1" Column="1" />
-      <File FileName="ExecutionEngine/Compiling/FSharpCompile.cs" Line="1" Column="1" />
-      <File FileName="ExecutionEngine/Compiling/JavaCompile.cs" Line="1" Column="1" />
-      <File FileName="ExecutionEngine/Compiling/CPPClangCompile.cs" Line="1" Column="1" />
-      <File FileName="ExecutionEngine/Compiling/ScalaCompile.cs" Line="1" Column="1" />
-      <File FileName="ExecutionEngine/Compiling/PascalCompile.cs" Line="1" Column="1" />
-      <File FileName="ExecutionEngine/Engine.cs" Line="1" Column="1" />
-      <File FileName="runPythonWrapper/Main.cs" Line="1" Column="1" />
-      <File FileName="ExecutionEngine/Utils.cs" Line="1" Column="1" />
-      <File FileName="ExecutionEngine/Compiling/ICompilerFactory.cs" Line="66" Column="27" />
-      <File FileName="ExecutionEngine/Compiling/SwiftCompile.cs" Line="26" Column="7" />
-      <File FileName="ExecutionEngine/Compiling/NasmCompile.cs" Line="1" Column="1" />
-      <File FileName="ServiceWarmup/Runs/JavaRun.cs" Line="1" Column="1" />
-      <File FileName="ExecutionEngine/Compiling/SchemeCompile.cs" Line="1" Column="1" />
-      <File FileName="ExecutionEngine/Compiling/AdaCompile.cs" Line="1" Column="1" />
-      <File FileName="ExecutionEngine/Compiling/ErlangCompile.cs" Line="1" Column="1" />
-      <File FileName="ExecutionEngine/Compiling/ElixirCompile.cs" Line="1" Column="1" />
-      <File FileName="ExecutionEngine/Compiling/PerlCompile.cs" Line="1" Column="1" />
-      <File FileName="ExecutionEngine/Compiling/OcamlCompile.cs" Line="1" Column="1" />
-      <File FileName="ExecutionEngine/Compiling/ClojureCompile.cs" Line="1" Column="1" />
-      <File FileName="runPythonWrapper/Tests/SwiftHello.cs" Line="24" Column="75" />
-      <File FileName="runPythonWrapper/Tests/TclHello.cs" Line="24" Column="75" />
+      <File FileName="GlobalUtils/TopSecret.cs" Line="1" Column="1" />
+      <File FileName="runPythonWrapper/Tests/ScalaHello.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Compiling/OctaveCompile.cs" Line="16" Column="64" />
+      <File FileName="RextesterService/web.config" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
