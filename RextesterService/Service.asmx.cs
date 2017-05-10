@@ -48,6 +48,20 @@ namespace RextesterService
 				};
 			}
 
+			if(!string.IsNullOrEmpty(Program) && Program.ToLower().Contains("setsid"))
+			{
+				return new Result()
+				{
+					Errors = "setsid system call is not allowed."
+				};
+			}
+			if(!string.IsNullOrEmpty(Program) && Program.ToLower().Contains("daemon"))
+			{
+				return new Result()
+				{
+					Errors = "daemon function is not allowed."
+				};
+			}
 
 			Engine engine = new Engine();
 			InputData idata = new InputData()
