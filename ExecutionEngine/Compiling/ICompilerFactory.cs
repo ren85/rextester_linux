@@ -79,6 +79,8 @@ namespace ExecutionEngine
 					return new OcamlCompile();
 				case Languages.Clojure:
 					return new ClojureCompile();
+				case Languages.Kotlin:
+					return new KotlinCompile();
 				default:
 					return null;
 			}

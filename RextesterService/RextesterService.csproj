@@ -83,5 +83,8 @@
     <None Include="parent.py" />
     <None Include="codediff.py" />
     <None Include="compile_parent.py" />
+    <None Include="mr_killer.py" />
+    <None Include="mr_cleaner.py" />
+    <None Include="mr_sos.py" />
   </ItemGroup>
 </Project>

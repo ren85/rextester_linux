@@ -40,7 +40,7 @@ namespace RextesterService
 			if(inputCompressed)
 				Input = Decompress(Input);
 				
-			if(!string.IsNullOrEmpty(Program) && Program.ToLower().Contains("setsid"))
+			/*if(!string.IsNullOrEmpty(Program) && Program.ToLower().Contains("setsid"))
 			{
 				return new Result()
 				{
@@ -61,7 +61,7 @@ namespace RextesterService
 				{
 					Errors = "daemon function is not allowed."
 				};
-			}
+			}*/
 
 			Engine engine = new Engine();
 			InputData idata = new InputData()

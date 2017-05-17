@@ -133,7 +133,8 @@ namespace ExecutionEngine
 		Erlang,
 		Elixir,
 		Ocaml,
-		Clojure
+		Clojure,
+		Kotlin
 	}	
 	
 	public class CompilerData
@@ -536,6 +537,9 @@ namespace ExecutionEngine
 					break;
 				case Languages.Clojure:
 					ext = ".clj";
+					break;
+				case Languages.Kotlin:
+					ext = ".kts";
 					break;
 				default:
 					ext = ".unknown";

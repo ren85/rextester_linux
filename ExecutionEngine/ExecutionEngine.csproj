@@ -75,6 +75,7 @@
     <Compile Include="Compiling\ElixirCompile.cs" />
     <Compile Include="Compiling\OcamlCompile.cs" />
     <Compile Include="Compiling\ClojureCompile.cs" />
+    <Compile Include="Compiling\KotlinCompile.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
