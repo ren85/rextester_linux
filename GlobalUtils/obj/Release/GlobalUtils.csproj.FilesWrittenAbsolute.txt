@@ -1,0 +1,3 @@
+/home/ren/Desktop/rextester_linux/GlobalUtils/obj/Release/.NETFramework,Version=v4.0.AssemblyAttribute.cs
+/home/ren/Desktop/rextester_linux/GlobalUtils/bin/Release/GlobalUtils.dll
+/home/ren/Desktop/rextester_linux/GlobalUtils/obj/Release/GlobalUtils.dll

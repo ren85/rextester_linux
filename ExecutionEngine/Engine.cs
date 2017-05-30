@@ -539,7 +539,7 @@ namespace ExecutionEngine
 					ext = ".clj";
 					break;
 				case Languages.Kotlin:
-					ext = ".kts";
+					ext = ".kt";
 					break;
 				default:
 					ext = ".unknown";

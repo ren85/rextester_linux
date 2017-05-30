@@ -24,7 +24,7 @@ namespace ExecutionEngine
 			long compileTime;
 			var res = Engine.CallCompiler(compiler, args, out compileTime);
 			cdata.CompileTimeMs = compileTime;
-			if(!File.Exists(idata.BaseDir + idata.Rand + ".jar") || !string.IsNullOrEmpty(res[1]))
+			if(!File.Exists(idata.BaseDir + idata.Rand + ".jar"))
 			{
 				if(res.Count > 1)
 				{
@@ -33,8 +33,9 @@ namespace ExecutionEngine
 				cdata.Success = false;
 				return cdata;		
 			}
-			if(res.Count > 1 && (!string.IsNullOrEmpty(res[0]) || !string.IsNullOrEmpty(res[1])))
-				cdata.Warning = Utils.ConcatenateString(res[0], res[1]);
+			if (res.Count > 1 && (!string.IsNullOrEmpty (res [0]) || !string.IsNullOrEmpty (res [1]))) {
+				cdata.Warning = Utils.ConcatenateString (res [0], res [1]);
+			}
 			cdata.ExecuteThis = " -jar " + idata.BaseDir + idata.Rand + ".jar";		
 			cdata.Executor = "java";					
 			cdata.Success = true;
