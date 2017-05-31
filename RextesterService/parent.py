@@ -36,7 +36,9 @@ def setlimits(compiler):
 
 os.setpgrp()
 
+os.environ["NODE_PATH"] = "/usr/local/lib/node_modules/"
 os.environ["HOME"] = "/var/www"
+
 if not sys.argv[1].startswith("erl"):
     os.chdir("/var/www/service/usercode")
 
