@@ -8,14 +8,14 @@ namespace GlobalUtils
 		{
 			get
 			{
-				return "awesome";
+				return "";
 			}
 		}
 		public static string ServicePass
 		{
 			get
 			{
-				return "day";
+				return "";
 			}
 		}
 
