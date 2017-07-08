@@ -1,4 +1,0 @@
-/home/ren/Desktop/rextester_linux/Services/obj/Release/.NETFramework,Version=v4.0.AssemblyAttribute.cs
-/home/ren/Desktop/rextester_linux/Services/bin/Release/Services.dll
-/home/ren/Desktop/rextester_linux/Services/obj/Release/Services.dll
-/home/ren/Desktop/rextester_linux/Services/bin/Release/Newtonsoft.Json.dll

@@ -134,7 +134,9 @@ namespace ExecutionEngine
 		Elixir,
 		Ocaml,
 		Clojure,
-		Kotlin
+		Kotlin,
+		Brainfuck,
+		Fortran
 	}	
 	
 	public class CompilerData
@@ -540,6 +542,12 @@ namespace ExecutionEngine
 					break;
 				case Languages.Kotlin:
 					ext = ".kt";
+					break;
+				case Languages.Brainfuck:
+					ext = ".b";
+					break;
+				case Languages.Fortran:
+					ext = ".f";
 					break;
 				default:
 					ext = ".unknown";

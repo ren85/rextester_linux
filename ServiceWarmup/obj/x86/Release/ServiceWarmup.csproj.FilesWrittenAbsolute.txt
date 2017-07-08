@@ -1,4 +1,0 @@
-/home/ren/Desktop/rextester_linux/ServiceWarmup/obj/x86/Release/.NETFramework,Version=v4.0.AssemblyAttribute.cs
-/home/ren/Desktop/rextester_linux/ServiceWarmup/bin/Release/ServiceWarmup.exe
-/home/ren/Desktop/rextester_linux/ServiceWarmup/obj/x86/Release/ServiceWarmup.exe
-/home/ren/Desktop/rextester_linux/ServiceWarmup/bin/Release/GlobalUtils.dll

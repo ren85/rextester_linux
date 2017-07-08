@@ -76,6 +76,8 @@
     <Compile Include="Compiling\OcamlCompile.cs" />
     <Compile Include="Compiling\ClojureCompile.cs" />
     <Compile Include="Compiling\KotlinCompile.cs" />
+    <Compile Include="Compiling\BrainfuckCompile.cs" />
+    <Compile Include="Compiling\FortranCompile.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

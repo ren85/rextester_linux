@@ -40,7 +40,7 @@ namespace ExecutionEngine
 			   lang == Languages.Pascal || lang == Languages.Haskell || lang == Languages.ObjectiveC || lang == Languages.Nasm || 
 			   lang == Languages.Go || lang == Languages.Scala || lang == Languages.D || lang == Languages.Swift || lang == Languages.FSharp ||
 			   lang == Languages.Rust || lang == Languages.Ada || lang == Languages.Erlang ||
-			   lang == Languages.Ocaml || lang == Languages.Clojure)
+			   lang == Languages.Ocaml || lang == Languages.Clojure || lang == Languages.Fortran)
 				return true;
 			else
 				return false;

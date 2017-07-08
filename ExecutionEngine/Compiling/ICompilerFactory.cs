@@ -81,6 +81,10 @@ namespace ExecutionEngine
 					return new ClojureCompile();
 				case Languages.Kotlin:
 					return new KotlinCompile();
+				case Languages.Brainfuck:
+					return new BrainfuckCompile();
+				case Languages.Fortran:
+					return new FortranCompile();
 				default:
 					return null;
 			}
