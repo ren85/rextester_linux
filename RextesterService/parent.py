@@ -8,6 +8,16 @@ import time
 import signal
 import select
 
+def TotalFiles():
+    batcmd="ls -fR /var/www/service/usercode | wc -l"
+    result = subprocess.check_output(batcmd, shell=True)
+    usercode = int(result)
+                                        
+    batcmd="ls -fR /var/www/service/diff | wc -l"
+    result = subprocess.check_output(batcmd, shell=True)
+    diff = int(result)                                                          
+    
+    return usercode + diff
 
 def setlimits(compiler):
 
@@ -36,11 +46,14 @@ def setlimits(compiler):
 
 os.setpgrp()
 
-os.environ["NODE_PATH"] = "/usr/local/lib/node_modules/"
 os.environ["HOME"] = "/var/www"
+os.environ["NODE_PATH"] = "/usr/local/lib/node_modules/"
 
 if not sys.argv[1].startswith("erl"):
     os.chdir("/var/www/service/usercode")
+
+total_files_before = TotalFiles()
+file_threshold = 100
 
 p = subprocess.Popen(sys.argv[1:], preexec_fn=setlimits(sys.argv[1:]))
 
@@ -52,12 +65,17 @@ else:
 #cmd = ' '.join(sys.argv[1:])
 #cmd = sys.argv[2]
 
+
 delta = 10
 if sys.argv[1].startswith("octave") or sys.argv[1] == "R" or "kotlin" in sys.argv[1]:
         delta = 20
 fin_time = time.time() + delta
 while p.poll() == None and fin_time > time.time():
-    time.sleep(0.1)
+    new_file_nr = TotalFiles()
+    if new_file_nr - total_files_before > file_threshold:
+        sys.stderr.write("Process killed, because sudden increase in number of files detected.")
+        os.killpg(0, signal.SIGKILL)
+    time.sleep(0.01)
 
 if fin_time < time.time():
     if select.select([sys.stdin,],[],[],0.0)[0]:
