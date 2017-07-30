@@ -16,8 +16,12 @@ def TotalFiles():
     batcmd="ls -fR /var/www/service/diff | wc -l"
     result = subprocess.check_output(batcmd, shell=True)
     diff = int(result)                                                          
-    
-    return usercode + diff
+
+    batcmd="ls -fR /tmp | wc -l"
+    result = subprocess.check_output(batcmd, shell=True)
+    tmp = int(result)
+
+    return usercode + diff + tmp
 
 def setlimits(compiler):
 
@@ -95,3 +99,4 @@ if select.select([sys.stdin,],[],[],0.0)[0]:
     sys.stdin.readlines()
 
 os.killpg(0, signal.SIGKILL)
+

@@ -2,41 +2,26 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" />
   <MonoDevelop.Ide.Workbench ActiveDocument="GlobalUtils/TopSecret.cs">
     <Files>
-      <File FileName="ExecutionEngine/Compiling/KotlinCompile.cs" Line="22" Column="23" />
-      <File FileName="ExecutionEngine/Compiling/BrainfuckCompile.cs" Line="5" Column="23" />
-      <File FileName="ExecutionEngine/Compiling/PhpCompile.cs" Line="7" Column="17" />
-      <File FileName="ExecutionEngine/Compiling/ICompilerFactory.cs" Line="87" Column="24" />
-      <File FileName="ExecutionEngine/Engine.cs" Line="452" Column="12" />
-      <File FileName="runPythonWrapper/Tests/PhpHello.cs" Line="20" Column="4" />
-      <File FileName="ExecutionEngine/Compiling/FortranCompile.cs" Line="31" Column="60" />
+      <File FileName="ExecutionEngine/Compiling/KotlinCompile.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Compiling/BrainfuckCompile.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Compiling/PhpCompile.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Compiling/ICompilerFactory.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Engine.cs" Line="549" Column="27" />
+      <File FileName="runPythonWrapper/Tests/PhpHello.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Compiling/FortranCompile.cs" Line="1" Column="1" />
       <File FileName="ExecutionEngine/Compiling/CCompile.cs" Line="1" Column="1" />
       <File FileName="ExecutionEngine/Compiling/LuaCompile.cs" Line="1" Column="1" />
       <File FileName="ExecutionEngine/Compiling/ObjectiveCCompile.cs" Line="1" Column="1" />
-      <File FileName="ExecutionEngine/Compiling/DCompile.cs" Line="52" Column="13" />
+      <File FileName="ExecutionEngine/Compiling/DCompile.cs" Line="1" Column="1" />
       <File FileName="ExecutionEngine/Compiling/HaskellCompile.cs" Line="1" Column="1" />
-      <File FileName="ExecutionEngine/Compiling/PascalCompile.cs" Line="50" Column="17" />
-      <File FileName="ExecutionEngine/Utils.cs" Line="43" Column="89" />
-      <File FileName="runPythonWrapper/Tests/PascalHello.cs" Line="19" Column="30" />
-      <File FileName="GlobalUtils/TopSecret.cs" Line="11" Column="13" />
+      <File FileName="ExecutionEngine/Compiling/PascalCompile.cs" Line="1" Column="1" />
+      <File FileName="ExecutionEngine/Utils.cs" Line="1" Column="1" />
+      <File FileName="runPythonWrapper/Tests/PascalHello.cs" Line="1" Column="1" />
+      <File FileName="GlobalUtils/TopSecret.cs" Line="11" Column="20" />
+      <File FileName="RextesterService/mr_cleaner.py" Line="3" Column="1" />
+      <File FileName="RextesterService/mr_sos.py" Line="6" Column="402" />
+      <File FileName="RextesterService/mr_killer.py" Line="1" Column="1" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="Rextester" expanded="True">
-            <Node name="ExecutionEngine" expanded="True">
-              <Node name="Compiling" expanded="True" />
-            </Node>
-            <Node name="GlobalUtils" expanded="True">
-              <Node name="TopSecret.cs" selected="True" />
-            </Node>
-            <Node name="RextesterService" expanded="True" />
-            <Node name="Test" expanded="True">
-              <Node name="Tests" expanded="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
