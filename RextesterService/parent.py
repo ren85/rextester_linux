@@ -40,7 +40,7 @@ def setlimits(compiler):
 
     resource.setrlimit(resource.RLIMIT_MEMLOCK, (0, 0))
     resource.setrlimit(resource.RLIMIT_NOFILE, (30, 30))
-    resource.setrlimit(resource.RLIMIT_NPROC, (500, 500))
+    resource.setrlimit(resource.RLIMIT_NPROC, (200, 200))
     resource.setrlimit(resource.RLIMIT_STACK, (100000000, 100000000))
 
     if compiler[0].startswith("erl")  or compiler[0].startswith("elixir") or compiler[0].startswith("octave") or compiler[0] == "R" or compiler[0] == "java" or "kotlin" in compiler[0] or "scala" in compiler[0]:
@@ -99,4 +99,3 @@ if select.select([sys.stdin,],[],[],0.0)[0]:
     sys.stdin.readlines()
 
 os.killpg(0, signal.SIGKILL)
-
