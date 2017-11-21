@@ -421,12 +421,12 @@ namespace ExecutionEngine
 		private void Cleanup(string dir)
 		{
 			
-			try
+			/*try
 			{
 				//cleanup
 				Directory.Delete(dir, true);
 			}
-			catch(Exception){}
+			catch(Exception){}*/
 		}
 		CompilerData CreateExecutable(InputData input)
 		{
