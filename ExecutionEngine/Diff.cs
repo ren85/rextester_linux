@@ -78,12 +78,12 @@ namespace ExecutionEngine
 			}
 			finally
 			{
-				/*try
+				try
 				{
 					//cleanup
 					Directory.Delete(diff_dir, true);
 				}
-				catch(Exception){}*/			
+				catch(Exception){}			
 			}
 		}
 	}

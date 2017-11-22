@@ -10,15 +10,23 @@ import select
 
 def TotalFiles():
     batcmd="ls -fR /var/www/service/usercode | wc -l"
-    result = subprocess.check_output(batcmd, shell=True)
+    result = 0
+    with open(os.devnull, 'w') as devnull:
+        result = subprocess.check_output(batcmd, shell=True, stderr=devnull)
     usercode = int(result)
-                                        
+    
+    #sys.stderr.write(result)
+
     batcmd="ls -fR /var/www/service/diff | wc -l"
-    result = subprocess.check_output(batcmd, shell=True)
+    result = 0
+    with open(os.devnull, 'w') as devnull:
+        result = subprocess.check_output(batcmd, shell=True, stderr=devnull)
     diff = int(result)                                                          
 
     batcmd="ls -fR /tmp | wc -l"
-    result = subprocess.check_output(batcmd, shell=True)
+    result = 0
+    with open(os.devnull, 'w') as devnull:
+        result = subprocess.check_output(batcmd, shell=True, stderr=devnull)
     tmp = int(result)
 
     return usercode + diff + tmp
